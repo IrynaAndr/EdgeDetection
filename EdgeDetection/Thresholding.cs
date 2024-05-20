@@ -104,10 +104,8 @@ namespace EdgeDetection
 
             // Copy image data into buffer
             Marshal.Copy(imageData.Scan0, buffer, 0, bytes);
-
             // Get global mean (average intensity)
             double mg = CalculateGlobalMean(buffer, bytes);
-
             // Process each pixel in the image
             for (int i = 0; i < bytes; i += 3)
             {
@@ -129,8 +127,6 @@ namespace EdgeDetection
 
             // Copy result back to image data
             Marshal.Copy(result, 0, imageData.Scan0, bytes);
-
-            // Unlock the image data
             image.UnlockBits(imageData);
 
             return image;
@@ -347,7 +343,7 @@ namespace EdgeDetection
             Bitmap grayImage = image;
             if (Flags.imageIsGrey == false)
             {
-                grayImage = ConvertToGrayscale(image);
+                grayImage = preprocessing.ConvertToGrayscale(image);
             }
              
 
@@ -398,6 +394,7 @@ namespace EdgeDetection
             return interClassVariance;
         }
 
+        /*
         public static Bitmap ConvertToGrayscale(Bitmap image)
         {
             Bitmap grayImage = new Bitmap(image.Width, image.Height);
@@ -414,7 +411,7 @@ namespace EdgeDetection
             Flags.imageIsGrey = true;
             return grayImage;
         }
-
+        */
 
     }
 }

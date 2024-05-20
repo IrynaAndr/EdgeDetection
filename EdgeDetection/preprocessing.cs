@@ -12,98 +12,31 @@ namespace EdgeDetection
     internal class preprocessing
     {
 
-        /*
-        public static double[,] CreateGaussianKernel(int length, double sigma)
+        public static Bitmap ConvertToGrayscale(Bitmap original)
         {
-            double[,] kernel = new double[length, length];
-            double sum = 0.0;
-            int radius = length / 2;
-            double s = 2.0 * sigma * sigma;
+            Bitmap grayscale = new Bitmap(original.Width, original.Height);
 
-            for (int x = -radius; x <= radius; x++)
+            using (Graphics g = Graphics.FromImage(grayscale))
             {
-                for (int y = -radius; y <= radius; y++)
-                {
-                    double r = Math.Sqrt(x * x + y * y);
-                    kernel[x + radius, y + radius] = (Math.Exp(-(r * r) / s)) / (Math.PI * s);
-                    sum += kernel[x + radius, y + radius];
-                }
-            }
-
-            // Normalize the kernel
-            for (int i = 0; i < length; i++)
-            {
-                for (int j = 0; j < length; j++)
-                {
-                    kernel[i, j] /= sum;
-                }
-            }
-
-            return kernel;
-        }
-
-        public static Bitmap ApplyGaussianFilter(Bitmap sourceBitmap, double[,] kernel)
-        {
-            BitmapData sourceData = sourceBitmap.LockBits(new Rectangle(0, 0, sourceBitmap.Width, sourceBitmap.Height),
-                                                          ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-
-            int bytesPerPixel = Image.GetPixelFormatSize(sourceBitmap.PixelFormat) / 8;
-            int byteCount = sourceData.Stride * sourceBitmap.Height;
-            byte[] pixelBuffer = new byte[byteCount];
-            byte[] resultBuffer = new byte[byteCount];
-
-            IntPtr sourceScan0 = sourceData.Scan0;
-            Marshal.Copy(sourceScan0, pixelBuffer, 0, byteCount);
-            sourceBitmap.UnlockBits(sourceData);
-
-            int filterOffset = (kernel.GetLength(0) - 1) / 2;
-            int calcOffset = 0;
-            double blue = 0.0, green = 0.0, red = 0.0;
-
-            for (int offsetY = filterOffset; offsetY < sourceBitmap.Height - filterOffset; offsetY++)
-            {
-                for (int offsetX = filterOffset; offsetX < sourceBitmap.Width - filterOffset; offsetX++)
-                {
-                    blue = 0;
-                    green = 0;
-                    red = 0;
-
-                    int byteOffset = offsetY * sourceData.Stride + offsetX * bytesPerPixel;
-
-                    for (int filterY = -filterOffset; filterY <= filterOffset; filterY++)
+                ColorMatrix colorMatrix = new ColorMatrix(
+                    new float[][]
                     {
-                        for (int filterX = -filterOffset; filterX <= filterOffset; filterX++)
-                        {
-                            calcOffset = byteOffset + (filterX * bytesPerPixel) + (filterY * sourceData.Stride);
+                    new float[] {0.3f, 0.3f, 0.3f, 0, 0}, //r
+                    new float[] {0.59f, 0.59f, 0.59f, 0, 0}, //g
+                    new float[] {0.11f, 0.11f, 0.11f, 0, 0}, //b
+                    new float[] {0, 0, 0, 1, 0}, //alpha
+                    new float[] {0, 0, 0, 0, 1} //an additional translation term
+                    });
 
-                            blue += (double)(pixelBuffer[calcOffset]) * kernel[filterY + filterOffset, filterX + filterOffset];
-                            green += (double)(pixelBuffer[calcOffset + 1]) * kernel[filterY + filterOffset, filterX + filterOffset];
-                            red += (double)(pixelBuffer[calcOffset + 2]) * kernel[filterY + filterOffset, filterX + filterOffset];
-                        }
-                    }
+                ImageAttributes attributes = new ImageAttributes();
+                attributes.SetColorMatrix(colorMatrix);
 
-                    resultBuffer[byteOffset] = ClipByte(blue);
-                    resultBuffer[byteOffset + 1] = ClipByte(green);
-                    resultBuffer[byteOffset + 2] = ClipByte(red);
-                }
+                g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height),
+                            0, 0, original.Width, original.Height, GraphicsUnit.Pixel, attributes);
             }
-
-            Bitmap resultBitmap = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
-            BitmapData resultData = resultBitmap.LockBits(new Rectangle(0, 0, resultBitmap.Width, resultBitmap.Height),
-                                                          ImageLockMode.WriteOnly, PixelFormat.Format24bppRgb);
-
-            IntPtr resultScan0 = resultData.Scan0;
-            Marshal.Copy(resultBuffer, 0, resultScan0, resultBuffer.Length);
-            resultBitmap.UnlockBits(resultData);
-
-            return resultBitmap;
+            Flags.imageIsGrey = true;
+            return grayscale;
         }
-
-        private static byte ClipByte(double color)
-        {
-            return (byte)(color > 255 ? 255 : (color < 0 ? 0 : color));
-        }
-        */
 
     }
 }

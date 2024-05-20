@@ -131,6 +131,8 @@
     <Compile Include="ApiForm.Designer.cs">
       <DependentUpon>ApiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ED\Canny.cs" />
+    <Compile Include="ED\ZeroCrossing.cs" />
     <Compile Include="ImageAPI.cs" />
     <Compile Include="ImageJson.cs" />
     <Compile Include="KernelConstructor.cs">

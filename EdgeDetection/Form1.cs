@@ -13,6 +13,7 @@ using TextBox = System.Windows.Forms.TextBox;
 using Button = System.Windows.Forms.Button;
 using static System.Net.Mime.MediaTypeNames;
 using System.Diagnostics;
+using EdgeDetection.ED;
 
 namespace EdgeDetection
 {
@@ -129,6 +130,11 @@ namespace EdgeDetection
                 "[ 1,  1,  1]\n" +
                 "[ 1,  1,  1]   * 1/9\n" +
                 "[ 1,  1,  1]\n");
+            pictureBoxEyeLap.Image = Properties.Resources.eye;
+            toolTip1.SetToolTip(pictureBoxEyeLap,
+                "[ 0, -1,  0]\n" +
+                "[-1,  4, -1]\n" +
+                "[ 0, -1,  0]\n");
 
         }
         private void LoadImages()
@@ -504,7 +510,7 @@ namespace EdgeDetection
 
         private void convertToGreyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            originalImage = Thresholding.ConvertToGrayscale(originalImage);
+            originalImage = preprocessing.ConvertToGrayscale(originalImage);
             updateMainPicture();
         }
 
@@ -552,7 +558,7 @@ namespace EdgeDetection
 
         private void button7_Click(object sender, EventArgs e)
         {
-            originalImage = Thresholding.ConvertToGrayscale(originalImage);
+            originalImage = preprocessing.ConvertToGrayscale(originalImage);
             updateMainPicture();
         }
 
@@ -653,6 +659,29 @@ namespace EdgeDetection
         private void ApiForm_DataSent(object sender, Bitmap data)
         {
             originalImage = data;
+            updateMainPicture();
+        }
+
+        private void convertToGreyscaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            originalImage = preprocessing.ConvertToGrayscale(originalImage);
+            updateMainPicture();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            originalImage = KernelConvolution.applyLaplacian(originalImage);
+            updateMainPicture();
+        }
+
+        private void tabPage12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            originalImage = ZeroCrossing.DetectZeroCrossings(originalImage);
             updateMainPicture();
         }
     }

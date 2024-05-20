@@ -191,6 +191,8 @@ namespace EdgeDetection
             return resultBitmap;
         }
 
+
+
         public static Bitmap applySharpenKernel(Bitmap image)
         {
             double[,] sharpenKernel = new double[3, 3]
@@ -285,5 +287,25 @@ namespace EdgeDetection
             return prewittResultBitmap;
         }
 
+        private static double[,] laplacianKernel = {
+            { 0, 1, 0 },
+            { 1,-4, 1 },
+            { 0, 1, 0 }
+        };
+        private static double[,] laplacianKernel2 = {
+            { 0, 1, 0 },
+            { 1,-4, 1 },
+            { 0, 1, 0 }
+        };
+        public static Bitmap applyLaplacian(Bitmap image)
+        {
+            if (Flags.imageIsGrey == false)
+            {
+                image = preprocessing.ConvertToGrayscale(image);
+            }
+            Bitmap lapalcianResultBitmap = ApplySingleKernelConvolution(image, laplacianKernel);
+            return lapalcianResultBitmap;
+        }
+        
     }
 }
