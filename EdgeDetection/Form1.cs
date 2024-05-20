@@ -643,5 +643,17 @@ namespace EdgeDetection
         {
 
         }
+
+        private void pythonLibrariesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            APIForm newForm = new APIForm(originalImage);
+            newForm.DataSent += ApiForm_DataSent;
+            newForm.Show();
+        }
+        private void ApiForm_DataSent(object sender, Bitmap data)
+        {
+            originalImage = data;
+            updateMainPicture();
+        }
     }
 }
