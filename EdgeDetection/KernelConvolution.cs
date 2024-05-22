@@ -11,15 +11,15 @@ namespace EdgeDetection
 {
     internal class KernelConvolution
     {
-        
-        static double[,] sobelX = new double[3, 3]
+
+        public static double[,] sobelX = new double[3, 3]
         {
             { -1, 0, 1 },
             { -2, 0, 2 },
             { -1, 0, 1 }
         };
 
-        static double[,] sobelY = new double[3, 3]
+        public static double[,] sobelY = new double[3, 3]
         {
             { -1, -2, -1 },
             {  0,  0,  0 },
@@ -27,21 +27,21 @@ namespace EdgeDetection
         };
 
         // Prewitt kernels
-        static double[,] prewittX = new double[3, 3]
+        public static double[,] prewittX = new double[3, 3]
         {
             { -1, 0, 1 },
             { -1, 0, 1 },
             { -1, 0, 1 }
         };
 
-        static double[,] prewittY = new double[3, 3]
+        public static double[,] prewittY = new double[3, 3]
         {
             { -1, -1, -1 },
             {  0,  0,  0 },
             {  1,  1,  1 }
         };
         
-        static double[,] sobelX5x5 = new double[5, 5]
+        public static double[,] sobelX5x5 = new double[5, 5]
         {
             { -1, -2, 0, 2, 1 },
             { -4, -8, 0, 8, 4 },
@@ -50,7 +50,7 @@ namespace EdgeDetection
             { -1, -2, 0, 2, 1 }
         };
 
-        static double[,] sobelY5x5 = new double[5, 5]
+        public static double[,] sobelY5x5 = new double[5, 5]
         {
             { -1, -4, -6, -4, -1 },
             { -2, -8, -12, -8, -2 },
@@ -191,63 +191,62 @@ namespace EdgeDetection
             return resultBitmap;
         }
 
-
-
-        public static Bitmap applySharpenKernel(Bitmap image)
+        public static double[,] NormalizeKernel(double[,] kernel, double coef)
         {
-            double[,] sharpenKernel = new double[3, 3]
+            double[,] kernelcopy = new double[kernel.GetLength(0),kernel.GetLength(1)];
+
+            for (int i = 0; i < kernel.GetLength(0); i++)
+            {
+                for (int j = 0; j < kernel.GetLength(1); j++)
+                {
+                    kernelcopy[i,j] = kernel[i,j];
+                    kernelcopy[i, j] /= coef;
+                }
+            }
+            return kernelcopy;
+        }
+
+        public static double[,] sharpenKernel = new double[3, 3]
             {
                 { 0, -1, 0 },
                 { -1, 5, -1 },
                 { 0, -1, 0 }
             };
+
+        public static Bitmap applySharpenKernel(Bitmap image)
+        {
             Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, sharpenKernel);
             return prewittResultBitmap;
         }
 
-        public static Bitmap applyGaussianKernel(Bitmap image)
-        {
-            double[,] gaussianKernel = new double[3, 3]
+
+
+        public static double[,] gaussianKernel = new double[3, 3]
            {
                 { 1, 2, 1 },
                 { 2, 4, 2 },
                 { 1, 2, 1 }
            };
-            // Normalize the kernel
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    gaussianKernel[i, j] /= 16.0;
-                }
-            }
-            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, gaussianKernel);
+        public static Bitmap applyGaussianKernel(Bitmap image)
+        {
+            double[,] normKernel = NormalizeKernel(gaussianKernel, 16.0); //coef is 1/16
+            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, normKernel);
             return prewittResultBitmap;
         }
 
-        public static Bitmap applyBoxBlurKernel(Bitmap image)
-        {
-            double[,] boxBlurKernel = new double[3, 3]
+        public static double[,] boxBlurKernel = new double[3, 3]
             {
                 { 1, 1, 1 },
                 { 1, 1, 1 },
                 { 1, 1, 1 }
             };
-            // Normalize the kernel
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    boxBlurKernel[i, j] /= 9.0;
-                }
-            }
-            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image,boxBlurKernel);
+        public static Bitmap applyBoxBlurKernel(Bitmap image)
+        {
+            double[,] normKernel = NormalizeKernel(boxBlurKernel, 9.0);//coef is 1/9
+            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image,normKernel);
             return prewittResultBitmap;
         }
-
-        public static Bitmap applyGaussianBlur5x5Kernel(Bitmap image)
-        {
-            double[,] biggerGaussinKernel = new double[5, 5]
+        public static double[,] biggerGaussinKernel = new double[5, 5]
             {
                 { 1, 4, 6, 4, 1 },
                 { 4, 16, 24 ,16,4},
@@ -255,20 +254,15 @@ namespace EdgeDetection
                 { 4, 16, 24 ,16,4},
                 { 1, 4, 6, 4, 1 }
             };
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    biggerGaussinKernel[i, j] /= 256.0;
-                }
-            }
-            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, biggerGaussinKernel);
+
+        public static Bitmap applyGaussianBlur5x5Kernel(Bitmap image)
+        {
+            double[,] normKernel = NormalizeKernel(biggerGaussinKernel, 256.0);//coef is 1/256
+            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, normKernel);
             return prewittResultBitmap;
         }
 
-        public static Bitmap applyUnsharpKernel(Bitmap image)
-        {
-            double[,] UnsharpKernel = new double[5, 5]
+        public static double[,] UnsharpKernel = new double[5, 5]
             {
                 { 1, 4, 6, 4, 1 },
                 { 4, 16, 24 ,16,4},
@@ -276,27 +270,19 @@ namespace EdgeDetection
                 { 4, 16, 24 ,16,4},
                 { 1, 4, 6, 4, 1 }
             };
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    UnsharpKernel[i, j] /= -256.0;
-                }
-            }
-            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, UnsharpKernel);
+        public static Bitmap applyUnsharpKernel(Bitmap image)
+        {
+            double[,] normKernel = NormalizeKernel(UnsharpKernel, -256.0);//coef is -1/256
+            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, normKernel);
             return prewittResultBitmap;
         }
 
-        private static double[,] laplacianKernel = {
+        public static double[,] laplacianKernel = {
             { 0, 1, 0 },
             { 1,-4, 1 },
             { 0, 1, 0 }
         };
-        private static double[,] laplacianKernel2 = {
-            { 0, 1, 0 },
-            { 1,-4, 1 },
-            { 0, 1, 0 }
-        };
+        
         public static Bitmap applyLaplacian(Bitmap image)
         {
             if (Flags.imageIsGrey == false)

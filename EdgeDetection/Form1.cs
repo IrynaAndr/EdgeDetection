@@ -684,5 +684,12 @@ namespace EdgeDetection
             originalImage = ZeroCrossing.DetectZeroCrossings(originalImage);
             updateMainPicture();
         }
+
+        private void customKernelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KernelConstructor newForm= new KernelConstructor(originalImage);
+            newForm.DataSent += ApiForm_DataSent;
+            newForm.Show();
+        }
     }
 }

@@ -123,7 +123,19 @@
             this.pictureBoxEye2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxEye1 = new System.Windows.Forms.PictureBox();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.button18 = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.pictureBoxEyeLap = new System.Windows.Forms.PictureBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -143,18 +155,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.pictureBoxEyeLap = new System.Windows.Forms.PictureBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.button18 = new System.Windows.Forms.Button();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
+            this.customKernelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
@@ -181,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEye2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEye1)).BeginInit();
             this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeLap)).BeginInit();
             this.tabPage11.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -193,7 +195,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeLap)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -568,7 +569,7 @@
             // convertToGreyToolStripMenuItem
             // 
             this.convertToGreyToolStripMenuItem.Name = "convertToGreyToolStripMenuItem";
-            this.convertToGreyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.convertToGreyToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.convertToGreyToolStripMenuItem.Text = "Convert to grey";
             this.convertToGreyToolStripMenuItem.Click += new System.EventHandler(this.convertToGreyToolStripMenuItem_Click);
             // 
@@ -579,7 +580,7 @@
             this.gaussianBlur5x5ToolStripMenuItem,
             this.boxBlurToolStripMenuItem});
             this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            this.blurToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blurToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.blurToolStripMenuItem.Text = "Blur";
             // 
             // gaussianBlur3x3ToolStripMenuItem
@@ -609,7 +610,7 @@
             this.sharpenToolStripMenuItem,
             this.unsharpMaskingToolStripMenuItem});
             this.sharpImageToolStripMenuItem.Name = "sharpImageToolStripMenuItem";
-            this.sharpImageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sharpImageToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.sharpImageToolStripMenuItem.Text = "Sharp image";
             // 
             // sharpenToolStripMenuItem
@@ -635,7 +636,8 @@
             // 
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.histogramToolStripMenuItem,
-            this.pythonLibrariesToolStripMenuItem});
+            this.pythonLibrariesToolStripMenuItem,
+            this.customKernelToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
             this.windowToolStripMenuItem.Text = "Window";
@@ -643,14 +645,14 @@
             // histogramToolStripMenuItem
             // 
             this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.histogramToolStripMenuItem.Text = "Histogram";
             this.histogramToolStripMenuItem.Click += new System.EventHandler(this.histogramToolStripMenuItem_Click);
             // 
             // pythonLibrariesToolStripMenuItem
             // 
             this.pythonLibrariesToolStripMenuItem.Name = "pythonLibrariesToolStripMenuItem";
-            this.pythonLibrariesToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.pythonLibrariesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pythonLibrariesToolStripMenuItem.Text = "Python Libraries";
             this.pythonLibrariesToolStripMenuItem.Click += new System.EventHandler(this.pythonLibrariesToolStripMenuItem_Click);
             // 
@@ -1179,6 +1181,102 @@
             this.tabPage12.UseVisualStyleBackColor = true;
             this.tabPage12.Click += new System.EventHandler(this.tabPage12_Click);
             // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(38, 214);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(174, 25);
+            this.button18.TabIndex = 28;
+            this.button18.Text = "Zero-Crossing";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(291, 101);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(164, 16);
+            this.label38.TabIndex = 27;
+            this.label38.Text = "but one should be enough.";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(285, 85);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(187, 16);
+            this.label37.TabIndex = 26;
+            this.label37.Text = "*can try to stack multiple times,";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(4, 253);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(349, 16);
+            this.label36.TabIndex = 25;
+            this.label36.Text = "5) (Optional) Apply threshold to create a binary edge map.";
+            // 
+            // label35
+            // 
+            this.label35.Location = new System.Drawing.Point(4, 162);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(475, 40);
+            this.label35.TabIndex = 24;
+            this.label35.Text = "4)(Optional) Detect Zero-Crossing. Zero-crossings are points where the sign of th" +
+    "e Laplacian changes, indicating an edge.";
+            // 
+            // pictureBoxEyeLap
+            // 
+            this.pictureBoxEyeLap.InitialImage = global::EdgeDetection.Properties.Resources.eye;
+            this.pictureBoxEyeLap.Location = new System.Drawing.Point(238, 87);
+            this.pictureBoxEyeLap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxEyeLap.Name = "pictureBoxEyeLap";
+            this.pictureBoxEyeLap.Size = new System.Drawing.Size(28, 30);
+            this.pictureBoxEyeLap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEyeLap.TabIndex = 23;
+            this.pictureBoxEyeLap.TabStop = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(4, 97);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(18, 16);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "3)";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(4, 23);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(470, 16);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "1)  Greyscale will apply automaticly. If the image is not already black and white" +
+    ".";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(4, 49);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(478, 16);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "2) (Optional) You might try to use blur as first step. To see how it affects the " +
+    "result.";
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(38, 94);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(174, 23);
+            this.button17.TabIndex = 0;
+            this.button17.Text = "Apply Laplacian kernel";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // tabPage11
             // 
             this.tabPage11.Controls.Add(this.label42);
@@ -1190,6 +1288,24 @@
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Canny edge det.";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            this.label42.Location = new System.Drawing.Point(4, 57);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(475, 40);
+            this.label42.TabIndex = 34;
+            this.label42.Text = "2) Gradient Calculation. Compute the gradient magnitude and orientation of the sm" +
+    "oothed image. Typically, this is done using convolution with Sobel kernel.";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(4, 23);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(268, 16);
+            this.label44.TabIndex = 31;
+            this.label44.Text = "1)  Gaussian filter will be applied automaticly";
             // 
             // tabPage7
             // 
@@ -1407,119 +1523,12 @@
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
-            // button17
+            // customKernelToolStripMenuItem
             // 
-            this.button17.Location = new System.Drawing.Point(38, 94);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(174, 23);
-            this.button17.TabIndex = 0;
-            this.button17.Text = "Apply Laplacian kernel";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(4, 49);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(478, 16);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "2) (Optional) You might try to use blur as first step. To see how it affects the " +
-    "result.";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(4, 23);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(470, 16);
-            this.label33.TabIndex = 2;
-            this.label33.Text = "1)  Greyscale will apply automaticly. If the image is not already black and white" +
-    ".";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(4, 97);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(18, 16);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "3)";
-            // 
-            // pictureBoxEyeLap
-            // 
-            this.pictureBoxEyeLap.InitialImage = global::EdgeDetection.Properties.Resources.eye;
-            this.pictureBoxEyeLap.Location = new System.Drawing.Point(238, 87);
-            this.pictureBoxEyeLap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxEyeLap.Name = "pictureBoxEyeLap";
-            this.pictureBoxEyeLap.Size = new System.Drawing.Size(28, 30);
-            this.pictureBoxEyeLap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEyeLap.TabIndex = 23;
-            this.pictureBoxEyeLap.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.Location = new System.Drawing.Point(4, 162);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(475, 40);
-            this.label35.TabIndex = 24;
-            this.label35.Text = "4)(Optional) Detect Zero-Crossing. Zero-crossings are points where the sign of th" +
-    "e Laplacian changes, indicating an edge.";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(4, 253);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(349, 16);
-            this.label36.TabIndex = 25;
-            this.label36.Text = "5) (Optional) Apply threshold to create a binary edge map.";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(285, 85);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(187, 16);
-            this.label37.TabIndex = 26;
-            this.label37.Text = "*can try to stack multiple times,";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(291, 101);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(164, 16);
-            this.label38.TabIndex = 27;
-            this.label38.Text = "but one should be enough.";
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(38, 214);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(174, 25);
-            this.button18.TabIndex = 28;
-            this.button18.Text = "Zero-Crossing";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // label42
-            // 
-            this.label42.Location = new System.Drawing.Point(4, 57);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(475, 40);
-            this.label42.TabIndex = 34;
-            this.label42.Text = "2) Gradient Calculation. Compute the gradient magnitude and orientation of the sm" +
-    "oothed image. Typically, this is done using convolution with Sobel kernel.";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(4, 23);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(268, 16);
-            this.label44.TabIndex = 31;
-            this.label44.Text = "1)  Gaussian filter will be applied automaticly";
+            this.customKernelToolStripMenuItem.Name = "customKernelToolStripMenuItem";
+            this.customKernelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.customKernelToolStripMenuItem.Text = "Custom Kernel";
+            this.customKernelToolStripMenuItem.Click += new System.EventHandler(this.customKernelToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1574,6 +1583,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEye1)).EndInit();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeLap)).EndInit();
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
             this.tabPage7.ResumeLayout(false);
@@ -1589,7 +1599,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeLap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1722,6 +1731,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ToolStripMenuItem customKernelToolStripMenuItem;
     }
 }
 
