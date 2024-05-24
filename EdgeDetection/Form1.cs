@@ -14,6 +14,7 @@ using Button = System.Windows.Forms.Button;
 using static System.Net.Mime.MediaTypeNames;
 using System.Diagnostics;
 using EdgeDetection.ED;
+using System.Linq.Expressions;
 
 namespace EdgeDetection
 {
@@ -647,7 +648,9 @@ namespace EdgeDetection
 
         private void button16_Click(object sender, EventArgs e)
         {
-
+            KernelConstructor newForm = new KernelConstructor(originalImage);
+            newForm.DataSent += ApiForm_DataSent;
+            newForm.Show();
         }
 
         private void pythonLibrariesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -690,6 +693,111 @@ namespace EdgeDetection
             KernelConstructor newForm= new KernelConstructor(originalImage);
             newForm.DataSent += ApiForm_DataSent;
             newForm.Show();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //canny edge detection
+            Bitmap image = extraFunctions.DeepCopyBitmap(originalImage);
+            //step 1 - gaussian blur
+            image = KernelConvolution.applyGaussianBlur5x5Kernel(image);
+            //step 2 - compute gradient 
+            ( gradientMagnitude,  gradientOrientation) = CannyED.ComputeGradients(image);
+            //Step 3 - Non - maximum Suppression
+            suppressedImage = CannyED.NonMaximumSuppression(gradientMagnitude, gradientOrientation);
+            //  Step 4 - Double Thresholding
+            checkparamsthr();
+            doubleThresholdedImage = Thresholding.DoubleThresholding(suppressedImage, lowThreshold, highThreshold);
+            // Step 5 - Edge Tracking by Hysteresis
+            finalEdgeImage = CannyED.EdgeTrackingByHysteresis(doubleThresholdedImage, lowThreshold, highThreshold);
+            // Step 6 - postprocessing (optional)
+            // Display
+            mainPicture.Image = finalEdgeImage;
+        }
+
+
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            originalImage = KernelConvolution.applyGaussianBlur5x5Kernel(originalImage);
+            updateMainPicture();
+        }
+        private Bitmap gradientMagnitude;
+        private Bitmap gradientOrientation;
+        private Bitmap suppressedImage;
+        private Bitmap doubleThresholdedImage;
+        private double lowThreshold = 50;
+        private double highThreshold = 150;
+        private Bitmap finalEdgeImage;
+
+        private void buttonGO_Click(object sender, EventArgs e)
+        {
+            (gradientMagnitude,gradientOrientation) = CannyED.ComputeGradients(originalImage);
+            mainPicture.Image = gradientOrientation;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            suppressedImage = CannyED.NonMaximumSuppression(gradientMagnitude, gradientOrientation);
+            mainPicture.Image = suppressedImage;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            Bitmap result = extraFunctions.DeepCopyBitmap(originalImage);
+            result = Thresholding.DoubleThresholding(result, trackBar2.Value, trackBar3.Value);
+            mainPicture.Image = result; 
+            
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            captureResult();
+        }
+        private void checkparamsthr()
+        {
+            try
+            {
+                Double.TryParse(textBoxLT.Text, out lowThreshold);
+                Double.TryParse(textBoxHT.Text, out highThreshold);
+            }
+            catch (Exception ex)
+            {
+                label41.Text = ex.Message + " Default parameters will be used";
+                label41.ForeColor = Color.Red;
+                textBoxLT.Text = "50";
+                textBoxHT.Text = "150";
+            }
+        }
+        private void button24_Click(object sender, EventArgs e)
+        {
+            checkparamsthr();
+            doubleThresholdedImage = Thresholding.DoubleThresholding(suppressedImage, lowThreshold, highThreshold);
+            mainPicture.Image = doubleThresholdedImage; 
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            checkparamsthr();
+            finalEdgeImage = CannyED.EdgeTrackingByHysteresis(doubleThresholdedImage, lowThreshold, highThreshold);
+            mainPicture.Image = finalEdgeImage;
+            captureResult();
+
+        }
+
+        private void textBoxLT_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

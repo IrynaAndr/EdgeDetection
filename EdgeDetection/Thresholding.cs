@@ -11,82 +11,7 @@ namespace EdgeDetection
 {
     internal class Thresholding
     {
-         
-        public static Bitmap VariableThresholdingLocalPropertiesOld( Bitmap image, double a, double b)
-        {
-            int w = image.Width;
-            int h = image.Height;
-
-            BitmapData image_data = image.LockBits(
-                new Rectangle(0, 0, w, h),
-                ImageLockMode.ReadOnly,
-                PixelFormat.Format24bppRgb);
-
-            int bytes = image_data.Stride * image_data.Height;
-            byte[] buffer = new byte[bytes];
-            byte[] result = new byte[bytes];
-
-            Marshal.Copy(image_data.Scan0, buffer, 0, bytes);
-            image.UnlockBits(image_data);
-
-            //Get global mean - this works only for grayscale images
-            double mg = 0;
-            for (int i = 0; i < bytes; i += 3)
-            {
-                mg += buffer[i];
-            }
-            mg /= (w * h);
-
-            for (int x = 1; x < w - 1; x++)
-            {
-                for (int y = 1; y < h - 1; y++)
-                {
-                    int position = x * 3 + y * image_data.Stride;
-                    double[] histogram = new double[256];
-
-                    for (int i = -1; i <= 1; i++)
-                    {
-                        for (int j = -1; j <= 1; j++)
-                        {
-                            int nposition = position + i * 3 + j * image_data.Stride;
-                            histogram[buffer[nposition]]++;
-                        }
-                    }
-
-                    histogram = histogram.Select(l => l / (w * h)).ToArray();
-
-                    double mean = 0;
-                    for (int i = 0; i < 256; i++)
-                    {
-                        mean += i * histogram[i];
-                    }
-
-                    double std = 0;
-                    for (int i = 0; i < 256; i++)
-                    {
-                        std += Math.Pow(i - mean, 2) * histogram[i];
-                    }
-                    std = Math.Sqrt(std);
-
-                    double threshold = a * std + b * mg;
-                    for (int c = 0; c < 3; c++)
-                    {
-                        result[position + c] = (byte)((buffer[position] > threshold) ? 255 : 0);
-                    }
-                }
-            }
-
-            Bitmap res_img = new Bitmap(w, h);
-            BitmapData res_data = res_img.LockBits(
-                new Rectangle(0, 0, w, h),
-                ImageLockMode.WriteOnly,
-                PixelFormat.Format24bppRgb);
-            Marshal.Copy(result, 0, res_data.Scan0, bytes);
-            res_img.UnlockBits(res_data);
-
-            return res_img;
-        }
-
+        
         public static Bitmap VariableThresholdingLocalProperties(Bitmap image, double a, double b)
         {
             int w = image.Width;
@@ -394,24 +319,61 @@ namespace EdgeDetection
             return interClassVariance;
         }
 
-        /*
-        public static Bitmap ConvertToGrayscale(Bitmap image)
+        public static Bitmap DoubleThresholding(Bitmap Image, double lowThreshold, double highThreshold)
         {
-            Bitmap grayImage = new Bitmap(image.Width, image.Height);
-            for (int y = 0; y < image.Height; y++)
+            int width = Image.Width;
+            int height = Image.Height;
+
+            Bitmap thresholdedImage = new Bitmap(width, height);
+
+            BitmapData suppressedData = Image.LockBits(new Rectangle(0, 0, width, height),
+                                                                 ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+            BitmapData thresholdedData = thresholdedImage.LockBits(new Rectangle(0, 0, width, height),
+                                                                   ImageLockMode.WriteOnly, PixelFormat.Format24bppRgb);
+
+            int bytes = suppressedData.Stride * height;
+            byte[] suppressedBuffer = new byte[bytes];
+            byte[] thresholdedBuffer = new byte[bytes];
+
+            Marshal.Copy(suppressedData.Scan0, suppressedBuffer, 0, bytes);
+
+            for (int y = 0; y < height; y++)
             {
-                for (int x = 0; x < image.Width; x++)
+                for (int x = 0; x < width; x++)
                 {
-                    Color originalColor = image.GetPixel(x, y);
-                    int grayValue = (int)(originalColor.R * 0.3 + originalColor.G * 0.59 + originalColor.B * 0.11);
-                    Color grayColor = Color.FromArgb(grayValue, grayValue, grayValue);
-                    grayImage.SetPixel(x, y, grayColor);
+                    int byteOffset = y * suppressedData.Stride + x * 3;
+                    double magnitude = suppressedBuffer[byteOffset];  // Assume single channel after suppression
+
+                    if (magnitude >= highThreshold)
+                    {
+                        thresholdedBuffer[byteOffset] = 255;       // Strong edge
+                        thresholdedBuffer[byteOffset + 1] = 255;
+                        thresholdedBuffer[byteOffset + 2] = 255;
+                    }
+                    else if (magnitude >= lowThreshold)
+                    {
+                        thresholdedBuffer[byteOffset] = 128;       // Weak edge
+                        thresholdedBuffer[byteOffset + 1] = 128;
+                        thresholdedBuffer[byteOffset + 2] = 128;
+                    }
+                    else
+                    {
+                        thresholdedBuffer[byteOffset] = 0;         // Non-edge
+                        thresholdedBuffer[byteOffset + 1] = 0;
+                        thresholdedBuffer[byteOffset + 2] = 0;
+                    }
                 }
             }
-            Flags.imageIsGrey = true;
-            return grayImage;
+
+            Marshal.Copy(thresholdedBuffer, 0, thresholdedData.Scan0, bytes);
+            Image.UnlockBits(suppressedData);
+            thresholdedImage.UnlockBits(thresholdedData);
+
+            return thresholdedImage;
         }
-        */
+
+
+        
 
     }
 }
