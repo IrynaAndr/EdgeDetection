@@ -15,6 +15,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Diagnostics;
 using EdgeDetection.ED;
 using System.Linq.Expressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace EdgeDetection
 {
@@ -135,7 +136,16 @@ namespace EdgeDetection
                 "[ 0, -1,  0]\n" +
                 "[-1,  4, -1]\n" +
                 "[ 0, -1,  0]\n");
-
+            pictureBoxEyeShrink.Image = Properties.Resources.eye;
+            toolTip1.SetToolTip(pictureBoxEyeShrink,
+                "A 3x3 is computationally inexpensive and provides a good balance between performance and effectiveness for most images.\n" +
+                "A 5x5 is useful to deal with larger noise or when more aggressive thinning.\n" +
+                "A 7x7 is useful when dealing with very thick edges or larger areas of noise that need to be eroded.\n");
+            pictureBoxEyeExpand.Image = Properties.Resources.eye;
+            toolTip1.SetToolTip(pictureBoxEyeExpand,
+                "A 3x3 is  efficient, oderate expansion effect, ideal for slightly thickening edges and connecting small gaps.\n" +
+                "A 5x5 is stronger dilation effect,  fill in larger gaps and holes within objects \n" +
+                "A 7x7 is significantly expanding objects in the image,  very thickened version of the edges.\n");
         }
         private void LoadImages()
         {
@@ -664,17 +674,17 @@ namespace EdgeDetection
         private void button16_Click(object sender, EventArgs e)
         {
             KernelConstructor newForm = new KernelConstructor(originalImage);
-            newForm.DataSent += ApiForm_DataSent;
+            newForm.DataSent += Form_DataSent;
             newForm.Show();
         }
 
         private void pythonLibrariesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             APIForm newForm = new APIForm(originalImage);
-            newForm.DataSent += ApiForm_DataSent;
+            newForm.DataSent += Form_DataSent;
             newForm.Show();
         }
-        private void ApiForm_DataSent(object sender, Bitmap data)
+        private void Form_DataSent(object sender, Bitmap data)
         {
             originalImage = data;
             updateMainPicture();
@@ -706,7 +716,7 @@ namespace EdgeDetection
         private void customKernelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             KernelConstructor newForm= new KernelConstructor(originalImage);
-            newForm.DataSent += ApiForm_DataSent;
+            newForm.DataSent += Form_DataSent;
             newForm.Show();
         }
 
@@ -836,6 +846,56 @@ namespace EdgeDetection
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+        
+        private void button26_Click(object sender, EventArgs e)
+        {
+            int kernelSize = 3;
+            if (radioButton1S.Checked)
+            {
+                kernelSize = 3;
+            }
+            else if (radioButton2S.Checked)
+            {
+                kernelSize = 5;
+            }
+            else
+            {
+                kernelSize = 7;
+            }
+            originalImage = preprocessing.Erode(originalImage, kernelSize);
+            updateMainPicture();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            int kernelSize = 3;
+            if (radioButton1E.Checked)
+            {
+                kernelSize = 3;
+            }
+            else if (radioButton2E.Checked)
+            {
+                kernelSize = 5;
+            }
+            else
+            {
+                kernelSize = 7;
+            }
+            originalImage = preprocessing.Dilate(originalImage, kernelSize);
+            updateMainPicture();
+        }
+
+        private void imageInNewWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExtraImage newForm = new ExtraImage((Bitmap)mainPicture.Image);
+            newForm.DataSent += Form_DataSent;
+            newForm.Show();
+        }
+
+        private void radioButton2S_CheckedChanged(object sender, EventArgs e)
         {
 
         }

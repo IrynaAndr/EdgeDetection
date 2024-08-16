@@ -57,5 +57,68 @@ namespace EdgeDetection
         }
         */
 
+        public static Bitmap Erode(Bitmap image, int kernelSize )
+        {
+            Bitmap resultBitmap = new Bitmap(image.Width, image.Height);
+
+            for (int y = kernelSize / 2; y < image.Height - kernelSize / 2; y++)
+            {
+                for (int x = kernelSize / 2; x < image.Width - kernelSize / 2; x++)
+                {
+                    int minIntensity = 255;
+
+                    for (int ky = -kernelSize / 2; ky <= kernelSize / 2; ky++)
+                    {
+                        for (int kx = -kernelSize / 2; kx <= kernelSize / 2; kx++)
+                        {
+                            Color neighborColor = image.GetPixel(x + kx, y + ky);
+                            int intensity = neighborColor.R; // Assuming grayscale, so R=G=B
+
+                            if (intensity < minIntensity)
+                            {
+                                minIntensity = intensity;
+                            }
+                        }
+                    }
+
+                    resultBitmap.SetPixel(x, y, Color.FromArgb(minIntensity, minIntensity, minIntensity));
+                }
+            }
+
+            return resultBitmap;
+        }
+
+        public static Bitmap Dilate(Bitmap image, int kernelSize)
+        {
+            Bitmap resultBitmap = new Bitmap(image.Width, image.Height);
+
+            for (int y = kernelSize / 2; y < image.Height - kernelSize / 2; y++)
+            {
+                for (int x = kernelSize / 2; x < image.Width - kernelSize / 2; x++)
+                {
+                    int maxIntensity = 0;
+
+                    for (int ky = -kernelSize / 2; ky <= kernelSize / 2; ky++)
+                    {
+                        for (int kx = -kernelSize / 2; kx <= kernelSize / 2; kx++)
+                        {
+                            Color neighborColor = image.GetPixel(x + kx, y + ky);
+                            int intensity = neighborColor.R; // Assuming grayscale, so R=G=B
+
+                            if (intensity > maxIntensity)
+                            {
+                                maxIntensity = intensity;
+                            }
+                        }
+                    }
+
+                    resultBitmap.SetPixel(x, y, Color.FromArgb(maxIntensity, maxIntensity, maxIntensity));
+                }
+            }
+
+            return resultBitmap;
+        }
+
+
     }
 }

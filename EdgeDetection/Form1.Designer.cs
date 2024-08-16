@@ -106,6 +106,11 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label31 = new System.Windows.Forms.Label();
             this.button16 = new System.Windows.Forms.Button();
             this.pictureBoxEyePrewitt = new System.Windows.Forms.PictureBox();
@@ -182,11 +187,29 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label54 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButton1S = new System.Windows.Forms.RadioButton();
+            this.radioButton2S = new System.Windows.Forms.RadioButton();
+            this.radioButton3S = new System.Windows.Forms.RadioButton();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.pictureBoxEyeShrink = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEyeExpand = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.radioButton3E = new System.Windows.Forms.RadioButton();
+            this.radioButton2E = new System.Windows.Forms.RadioButton();
+            this.radioButton1E = new System.Windows.Forms.RadioButton();
+            this.imageInNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label61 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
@@ -206,6 +229,7 @@
             this.tabPage6.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyePrewitt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeSobel55)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeSobel33)).BeginInit();
@@ -229,7 +253,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.tabPage14.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeExpand)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -822,7 +850,8 @@
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.histogramToolStripMenuItem,
             this.pythonLibrariesToolStripMenuItem,
-            this.customKernelToolStripMenuItem});
+            this.customKernelToolStripMenuItem,
+            this.imageInNewWindowToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
             this.windowToolStripMenuItem.Text = "Window";
@@ -1002,6 +1031,56 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sobel/Prewitt";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.label54);
+            this.panel1.Controls.Add(this.label53);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Location = new System.Drawing.Point(314, 77);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 24;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(110, 62);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(60, 22);
+            this.textBox4.TabIndex = 26;
+            this.textBox4.Text = "30";
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(7, 6);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(70, 20);
+            this.label54.TabIndex = 25;
+            this.label54.Text = "(Option)";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(8, 65);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(89, 16);
+            this.label53.TabIndex = 22;
+            this.label53.Text = "From 0 to 255:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(11, 36);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(148, 20);
+            this.checkBox1.TabIndex = 23;
+            this.checkBox1.Text = "Use threshold value";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label31
             // 
@@ -1631,6 +1710,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage14);
             this.tabControl1.Location = new System.Drawing.Point(3, 2);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -1833,55 +1913,249 @@
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
-            // label53
+            // tabPage14
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(8, 65);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(89, 16);
-            this.label53.TabIndex = 22;
-            this.label53.Text = "From 0 to 255:";
+            this.tabPage14.Controls.Add(this.label61);
+            this.tabPage14.Controls.Add(this.panel3);
+            this.tabPage14.Controls.Add(this.pictureBoxEyeExpand);
+            this.tabPage14.Controls.Add(this.pictureBoxEyeShrink);
+            this.tabPage14.Controls.Add(this.panel2);
+            this.tabPage14.Controls.Add(this.label39);
+            this.tabPage14.Controls.Add(this.label57);
+            this.tabPage14.Controls.Add(this.label55);
+            this.tabPage14.Controls.Add(this.label52);
+            this.tabPage14.Controls.Add(this.button27);
+            this.tabPage14.Controls.Add(this.button26);
+            this.tabPage14.Location = new System.Drawing.Point(4, 25);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(517, 333);
+            this.tabPage14.TabIndex = 2;
+            this.tabPage14.Text = "Shrink & Expand";
+            this.tabPage14.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // button26
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(11, 36);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(148, 20);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Use threshold value";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.button26.Location = new System.Drawing.Point(359, 139);
+            this.button26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(139, 33);
+            this.button26.TabIndex = 6;
+            this.button26.Text = "apply shrink";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
-            // panel1
+            // button27
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label54);
-            this.panel1.Controls.Add(this.label53);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Location = new System.Drawing.Point(314, 77);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 24;
+            this.button27.Location = new System.Drawing.Point(368, 288);
+            this.button27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(139, 33);
+            this.button27.TabIndex = 7;
+            this.button27.Text = "apply expand";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
-            // label54
+            // label52
             // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(7, 6);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(70, 20);
-            this.label54.TabIndex = 25;
-            this.label54.Text = "(Option)";
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(22, 20);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(135, 20);
+            this.label52.TabIndex = 9;
+            this.label52.Text = "Shrink (Erosion):";
             // 
-            // textBox4
+            // label55
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(60, 22);
-            this.textBox4.TabIndex = 26;
-            this.textBox4.Text = "30";
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(22, 180);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(143, 20);
+            this.label55.TabIndex = 10;
+            this.label55.Text = "Expand (Dilation):";
+            // 
+            // label57
+            // 
+            this.label57.Location = new System.Drawing.Point(23, 52);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(475, 40);
+            this.label57.TabIndex = 25;
+            this.label57.Text = "This operation will remove small white noises and detach two connected objects. I" +
+    "t is used to make edges thinner.";
+            // 
+            // label39
+            // 
+            this.label39.Location = new System.Drawing.Point(23, 210);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(475, 40);
+            this.label39.TabIndex = 26;
+            this.label39.Text = "This operation will enlarge the white regions (edges). It is useful for connectin" +
+    "g broken parts of an object or filling small holes.";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label58);
+            this.panel2.Controls.Add(this.label56);
+            this.panel2.Controls.Add(this.radioButton3S);
+            this.panel2.Controls.Add(this.radioButton2S);
+            this.panel2.Controls.Add(this.radioButton1S);
+            this.panel2.Location = new System.Drawing.Point(26, 115);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(293, 44);
+            this.panel2.TabIndex = 27;
+            // 
+            // radioButton1S
+            // 
+            this.radioButton1S.AutoSize = true;
+            this.radioButton1S.Checked = true;
+            this.radioButton1S.Location = new System.Drawing.Point(3, 13);
+            this.radioButton1S.Name = "radioButton1S";
+            this.radioButton1S.Size = new System.Drawing.Size(48, 20);
+            this.radioButton1S.TabIndex = 0;
+            this.radioButton1S.TabStop = true;
+            this.radioButton1S.Text = "3x3";
+            this.radioButton1S.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2S
+            // 
+            this.radioButton2S.AutoSize = true;
+            this.radioButton2S.Location = new System.Drawing.Point(117, 13);
+            this.radioButton2S.Name = "radioButton2S";
+            this.radioButton2S.Size = new System.Drawing.Size(48, 20);
+            this.radioButton2S.TabIndex = 1;
+            this.radioButton2S.Text = "5x5";
+            this.radioButton2S.UseVisualStyleBackColor = true;
+            this.radioButton2S.CheckedChanged += new System.EventHandler(this.radioButton2S_CheckedChanged);
+            // 
+            // radioButton3S
+            // 
+            this.radioButton3S.AutoSize = true;
+            this.radioButton3S.Location = new System.Drawing.Point(171, 13);
+            this.radioButton3S.Name = "radioButton3S";
+            this.radioButton3S.Size = new System.Drawing.Size(48, 20);
+            this.radioButton3S.TabIndex = 2;
+            this.radioButton3S.Text = "7x7";
+            this.radioButton3S.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(57, 15);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(54, 16);
+            this.label56.TabIndex = 3;
+            this.label56.Text = "(fastest)";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(225, 15);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(60, 16);
+            this.label58.TabIndex = 4;
+            this.label58.Text = "(slowest)";
+            // 
+            // pictureBoxEyeShrink
+            // 
+            this.pictureBoxEyeShrink.InitialImage = global::EdgeDetection.Properties.Resources.eye;
+            this.pictureBoxEyeShrink.Location = new System.Drawing.Point(325, 118);
+            this.pictureBoxEyeShrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxEyeShrink.Name = "pictureBoxEyeShrink";
+            this.pictureBoxEyeShrink.Size = new System.Drawing.Size(28, 30);
+            this.pictureBoxEyeShrink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEyeShrink.TabIndex = 28;
+            this.pictureBoxEyeShrink.TabStop = false;
+            // 
+            // pictureBoxEyeExpand
+            // 
+            this.pictureBoxEyeExpand.InitialImage = global::EdgeDetection.Properties.Resources.eye;
+            this.pictureBoxEyeExpand.Location = new System.Drawing.Point(334, 268);
+            this.pictureBoxEyeExpand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxEyeExpand.Name = "pictureBoxEyeExpand";
+            this.pictureBoxEyeExpand.Size = new System.Drawing.Size(28, 30);
+            this.pictureBoxEyeExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEyeExpand.TabIndex = 29;
+            this.pictureBoxEyeExpand.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label59);
+            this.panel3.Controls.Add(this.label60);
+            this.panel3.Controls.Add(this.radioButton3E);
+            this.panel3.Controls.Add(this.radioButton2E);
+            this.panel3.Controls.Add(this.radioButton1E);
+            this.panel3.Location = new System.Drawing.Point(29, 253);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(299, 44);
+            this.panel3.TabIndex = 28;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(222, 15);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(60, 16);
+            this.label59.TabIndex = 4;
+            this.label59.Text = "(slowest)";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(54, 15);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(54, 16);
+            this.label60.TabIndex = 3;
+            this.label60.Text = "(fastest)";
+            // 
+            // radioButton3E
+            // 
+            this.radioButton3E.AutoSize = true;
+            this.radioButton3E.Location = new System.Drawing.Point(168, 13);
+            this.radioButton3E.Name = "radioButton3E";
+            this.radioButton3E.Size = new System.Drawing.Size(48, 20);
+            this.radioButton3E.TabIndex = 2;
+            this.radioButton3E.Text = "7x7";
+            this.radioButton3E.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2E
+            // 
+            this.radioButton2E.AutoSize = true;
+            this.radioButton2E.Location = new System.Drawing.Point(114, 13);
+            this.radioButton2E.Name = "radioButton2E";
+            this.radioButton2E.Size = new System.Drawing.Size(48, 20);
+            this.radioButton2E.TabIndex = 1;
+            this.radioButton2E.Text = "5x5";
+            this.radioButton2E.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1E
+            // 
+            this.radioButton1E.AutoSize = true;
+            this.radioButton1E.Checked = true;
+            this.radioButton1E.Location = new System.Drawing.Point(3, 13);
+            this.radioButton1E.Name = "radioButton1E";
+            this.radioButton1E.Size = new System.Drawing.Size(48, 20);
+            this.radioButton1E.TabIndex = 0;
+            this.radioButton1E.TabStop = true;
+            this.radioButton1E.Text = "3x3";
+            this.radioButton1E.UseVisualStyleBackColor = true;
+            // 
+            // imageInNewWindowToolStripMenuItem
+            // 
+            this.imageInNewWindowToolStripMenuItem.Name = "imageInNewWindowToolStripMenuItem";
+            this.imageInNewWindowToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.imageInNewWindowToolStripMenuItem.Text = "Image  in New Window";
+            this.imageInNewWindowToolStripMenuItem.Click += new System.EventHandler(this.imageInNewWindowToolStripMenuItem_Click);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(26, 96);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(75, 16);
+            this.label61.TabIndex = 30;
+            this.label61.Text = "Kernel size:";
             // 
             // Form1
             // 
@@ -1928,6 +2202,8 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyePrewitt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeSobel55)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeSobel33)).EndInit();
@@ -1956,8 +2232,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.tabPage14.ResumeLayout(false);
+            this.tabPage14.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeExpand)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2121,6 +2403,29 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.RadioButton radioButton3S;
+        private System.Windows.Forms.RadioButton radioButton2S;
+        private System.Windows.Forms.RadioButton radioButton1S;
+        private System.Windows.Forms.PictureBox pictureBoxEyeShrink;
+        private System.Windows.Forms.PictureBox pictureBoxEyeExpand;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.RadioButton radioButton3E;
+        private System.Windows.Forms.RadioButton radioButton2E;
+        private System.Windows.Forms.RadioButton radioButton1E;
+        private System.Windows.Forms.ToolStripMenuItem imageInNewWindowToolStripMenuItem;
+        private System.Windows.Forms.Label label61;
     }
 }
 

@@ -133,6 +133,12 @@
     </Compile>
     <Compile Include="ED\CannyED.cs" />
     <Compile Include="ED\ZeroCrossing.cs" />
+    <Compile Include="ExtraImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtraImage.Designer.cs">
+      <DependentUpon>ExtraImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageAPI.cs" />
     <Compile Include="ImageJson.cs" />
     <Compile Include="KernelConstructor.cs">
@@ -163,6 +169,9 @@
     <Compile Include="Thresholding.cs" />
     <EmbeddedResource Include="ApiForm.resx">
       <DependentUpon>ApiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraImage.resx">
+      <DependentUpon>ExtraImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
