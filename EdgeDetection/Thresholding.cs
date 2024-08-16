@@ -271,7 +271,6 @@ namespace EdgeDetection
                 grayImage = preprocessing.ConvertToGrayscale(image);
             }
              
-
             // Step 2: Compute histogram
             int[] histogram = new int[256];
             for (int y = 0; y < grayImage.Height; y++)

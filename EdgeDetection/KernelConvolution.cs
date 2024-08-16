@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace EdgeDetection
 {
@@ -118,6 +119,76 @@ namespace EdgeDetection
 
             return resultBitmap;
         }
+
+        public static Bitmap ApplyDoubleConvolutionFilter(Bitmap sourceBitmap, double[,] xKernel, double[,] yKernel, double threshold)
+        {
+            int width = sourceBitmap.Width;
+            int height = sourceBitmap.Height;
+            int kernelWidth = xKernel.GetLength(1);
+            int kernelHeight = xKernel.GetLength(0);
+            int kernelOffset = kernelWidth / 2;
+            Bitmap grayscaleBitmap = sourceBitmap;
+
+            if (Flags.imageIsGrey == false)
+            {
+                grayscaleBitmap = preprocessing.ConvertToGrayscale(sourceBitmap);
+            }
+
+            BitmapData sourceData = grayscaleBitmap.LockBits(new Rectangle(0, 0, width, height),
+                                                             ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+            byte[] pixelBuffer = new byte[sourceData.Stride * height];
+            byte[] resultBuffer = new byte[sourceData.Stride * height];
+
+            Marshal.Copy(sourceData.Scan0, pixelBuffer, 0, pixelBuffer.Length);
+            grayscaleBitmap.UnlockBits(sourceData);
+
+            for (int y = kernelOffset; y < height - kernelOffset; y++)
+            {
+                for (int x = kernelOffset; x < width - kernelOffset; x++)
+                {
+                    double intensityX = 0.0;
+                    double intensityY = 0.0;
+
+                    int byteOffset = y * sourceData.Stride + x * 3;
+
+                    for (int filterY = -kernelOffset; filterY <= kernelOffset; filterY++)
+                    {
+                        for (int filterX = -kernelOffset; filterX <= kernelOffset; filterX++)
+                        {
+                            int calcOffset = byteOffset + (filterX * 3) + (filterY * sourceData.Stride);
+
+                            intensityX += pixelBuffer[calcOffset] * xKernel[filterY + kernelOffset, filterX + kernelOffset];
+                            intensityY += pixelBuffer[calcOffset] * yKernel[filterY + kernelOffset, filterX + kernelOffset];
+                        }
+                    }
+
+                    double intensity = Math.Sqrt((intensityX * intensityX) + (intensityY * intensityY));
+
+                    if (intensity > threshold)
+                    {
+                        resultBuffer[byteOffset] = ClipByte(intensity);
+                        resultBuffer[byteOffset + 1] = ClipByte(intensity);
+                        resultBuffer[byteOffset + 2] = ClipByte(intensity);
+                    }
+                    else
+                    {
+                        resultBuffer[byteOffset] = 0;
+                        resultBuffer[byteOffset + 1] = 0;
+                        resultBuffer[byteOffset + 2] = 0;
+                    }
+                }
+            }
+
+            Bitmap resultBitmap = new Bitmap(width, height);
+            BitmapData resultData = resultBitmap.LockBits(new Rectangle(0, 0, width, height),
+                                                          ImageLockMode.WriteOnly, PixelFormat.Format24bppRgb);
+            Marshal.Copy(resultBuffer, 0, resultData.Scan0, resultBuffer.Length);
+            resultBitmap.UnlockBits(resultData);
+
+            return resultBitmap;
+        }
+
+        
 
         private static byte ClipByte(double color)
         {

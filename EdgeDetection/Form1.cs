@@ -20,8 +20,8 @@ namespace EdgeDetection
 {
     public partial class Form1 : Form
     {
-        private Bitmap originalImage; // Store the original image
-        private Bitmap displayedImage; // Store the image currently displayed in PictureBox
+        private Bitmap originalImage;
+        private Bitmap displayedImage; 
         public Form1()
         {
             InitializeComponent();
@@ -62,7 +62,6 @@ namespace EdgeDetection
                 try
                 {
                     string selectedImagePath = openFileDialog.FileName;
-                    // Load the selected image into a Bitmap
                     Bitmap image = new Bitmap(selectedImagePath);
 
                     mainPicture.Image = image;
@@ -145,7 +144,7 @@ namespace EdgeDetection
                 pictureBox1.Image = Properties.Resources.boat; 
                 pictureBox2.Image = Properties.Resources.flower;
                 pictureBox3.Image = Properties.Resources.book_page;
-                pictureBox4.Image = Properties.Resources.portrait1;
+                pictureBox4.Image = Properties.Resources.Lenna;
                 pictureBox5.Image = Properties.Resources.portrait2;
 
                 
@@ -183,7 +182,6 @@ namespace EdgeDetection
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            // Cast sender to PictureBox to identify which PictureBox was clicked
             PictureBox clickedPictureBox = sender as PictureBox;
 
             if (clickedPictureBox != null)
@@ -249,7 +247,7 @@ namespace EdgeDetection
         private void RGBUpdateImage()
         {
 
-            //displayedImage = new Bitmap(originalImage);
+            displayedImage = new Bitmap(originalImage);
 
             for (int y = 0; y < displayedImage.Height; y++)
             {
@@ -269,8 +267,6 @@ namespace EdgeDetection
                     displayedImage.SetPixel(x, y, newColor);
                 }
             }
-
-            // Display the updated image in PictureBox
             mainPicture.Image = displayedImage;
         }
 
@@ -304,7 +300,6 @@ namespace EdgeDetection
             }
             else
             {
-                // Parsing failed, handle invalid input
                 MessageBox.Show("Invalid double input. Please enter a valid input.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -345,7 +340,6 @@ namespace EdgeDetection
                 }
             }
 
-            // Display the histogram chart in the PictureBox
             histogramPictureBox.Image = chartBitmap;
             histogramPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
@@ -565,19 +559,40 @@ namespace EdgeDetection
 
         private void button8_Click(object sender, EventArgs e)
         {
-            originalImage = KernelConvolution.applySobel(originalImage);
+            if (checkBox1.Checked)
+            {
+                originalImage = KernelConvolution.ApplyDoubleConvolutionFilter(originalImage, KernelConvolution.sobelX, KernelConvolution.sobelY, Convert.ToDouble(textBox4.Text));
+            }
+            else
+            {
+                originalImage = KernelConvolution.applySobel(originalImage);
+            }
             updateMainPicture();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            originalImage = KernelConvolution.applyPrewitt(originalImage);
+            if (checkBox1.Checked)
+            {
+                originalImage = KernelConvolution.ApplyDoubleConvolutionFilter(originalImage, KernelConvolution.prewittX, KernelConvolution.prewittY, Convert.ToDouble(textBox4.Text));
+            }
+            else
+            {
+                originalImage = KernelConvolution.applyPrewitt(originalImage);
+            }
             updateMainPicture();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            originalImage = KernelConvolution.applySobel5x5(originalImage);
+            if (checkBox1.Checked)
+            {
+                originalImage = KernelConvolution.ApplyDoubleConvolutionFilter(originalImage, KernelConvolution.sobelX5x5, KernelConvolution.sobelY5x5, Convert.ToDouble(textBox4.Text));
+            }
+            else
+            {
+                originalImage = KernelConvolution.applySobel5x5(originalImage);
+            }
             updateMainPicture();
         }
 
@@ -796,6 +811,31 @@ namespace EdgeDetection
         }
 
         private void textBoxLT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            textBoxLow.Text = trackBar2.Value.ToString();
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            textBoxHigh.Text = trackBar3.Value.ToString();
+        }
+
+        private void trackBar1_Scroll_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
