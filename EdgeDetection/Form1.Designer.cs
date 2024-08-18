@@ -92,6 +92,7 @@
             this.histogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pythonLibrariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customKernelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageInNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -149,11 +150,11 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.pictureBoxEyeLap = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
+            this.pictureBoxEyeLap = new System.Windows.Forms.PictureBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.textBoxHT = new System.Windows.Forms.TextBox();
             this.textBoxLT = new System.Windows.Forms.TextBox();
@@ -180,36 +181,40 @@
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainPicture = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButton1S = new System.Windows.Forms.RadioButton();
-            this.radioButton2S = new System.Windows.Forms.RadioButton();
-            this.radioButton3S = new System.Windows.Forms.RadioButton();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.pictureBoxEyeShrink = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEyeExpand = new System.Windows.Forms.PictureBox();
+            this.label61 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.radioButton3E = new System.Windows.Forms.RadioButton();
             this.radioButton2E = new System.Windows.Forms.RadioButton();
             this.radioButton1E = new System.Windows.Forms.RadioButton();
-            this.imageInNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label61 = new System.Windows.Forms.Label();
+            this.pictureBoxEyeExpand = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEyeShrink = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.radioButton3S = new System.Windows.Forms.RadioButton();
+            this.radioButton2S = new System.Windows.Forms.RadioButton();
+            this.radioButton1S = new System.Windows.Forms.RadioButton();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.button28 = new System.Windows.Forms.Button();
+            this.label62 = new System.Windows.Forms.Label();
+            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.mainPicture = new System.Windows.Forms.PictureBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.button29 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
@@ -247,17 +252,18 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarBlur)).BeginInit();
             this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPage14.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeExpand)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeExpand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.tabPage15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -859,23 +865,30 @@
             // histogramToolStripMenuItem
             // 
             this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.histogramToolStripMenuItem.Text = "Histogram";
             this.histogramToolStripMenuItem.Click += new System.EventHandler(this.histogramToolStripMenuItem_Click);
             // 
             // pythonLibrariesToolStripMenuItem
             // 
             this.pythonLibrariesToolStripMenuItem.Name = "pythonLibrariesToolStripMenuItem";
-            this.pythonLibrariesToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.pythonLibrariesToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.pythonLibrariesToolStripMenuItem.Text = "Python Libraries";
             this.pythonLibrariesToolStripMenuItem.Click += new System.EventHandler(this.pythonLibrariesToolStripMenuItem_Click);
             // 
             // customKernelToolStripMenuItem
             // 
             this.customKernelToolStripMenuItem.Name = "customKernelToolStripMenuItem";
-            this.customKernelToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.customKernelToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.customKernelToolStripMenuItem.Text = "Custom Kernel";
             this.customKernelToolStripMenuItem.Click += new System.EventHandler(this.customKernelToolStripMenuItem_Click);
+            // 
+            // imageInNewWindowToolStripMenuItem
+            // 
+            this.imageInNewWindowToolStripMenuItem.Name = "imageInNewWindowToolStripMenuItem";
+            this.imageInNewWindowToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.imageInNewWindowToolStripMenuItem.Text = "Image  in New Window";
+            this.imageInNewWindowToolStripMenuItem.Click += new System.EventHandler(this.imageInNewWindowToolStripMenuItem_Click);
             // 
             // button3
             // 
@@ -1439,11 +1452,11 @@
             this.tabPage12.Controls.Add(this.label37);
             this.tabPage12.Controls.Add(this.label36);
             this.tabPage12.Controls.Add(this.label35);
-            this.tabPage12.Controls.Add(this.pictureBoxEyeLap);
             this.tabPage12.Controls.Add(this.label34);
             this.tabPage12.Controls.Add(this.label33);
             this.tabPage12.Controls.Add(this.label32);
             this.tabPage12.Controls.Add(this.button17);
+            this.tabPage12.Controls.Add(this.pictureBoxEyeLap);
             this.tabPage12.Location = new System.Drawing.Point(4, 25);
             this.tabPage12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage12.Name = "tabPage12";
@@ -1499,17 +1512,6 @@
             this.label35.Text = "4)(Optional) Detect Zero-Crossing. Zero-crossings are points where the sign of th" +
     "e Laplacian changes, indicating an edge.";
             // 
-            // pictureBoxEyeLap
-            // 
-            this.pictureBoxEyeLap.InitialImage = global::EdgeDetection.Properties.Resources.eye;
-            this.pictureBoxEyeLap.Location = new System.Drawing.Point(238, 87);
-            this.pictureBoxEyeLap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxEyeLap.Name = "pictureBoxEyeLap";
-            this.pictureBoxEyeLap.Size = new System.Drawing.Size(28, 30);
-            this.pictureBoxEyeLap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEyeLap.TabIndex = 23;
-            this.pictureBoxEyeLap.TabStop = false;
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
@@ -1548,6 +1550,17 @@
             this.button17.Text = "Apply Laplacian kernel";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // pictureBoxEyeLap
+            // 
+            this.pictureBoxEyeLap.InitialImage = global::EdgeDetection.Properties.Resources.eye;
+            this.pictureBoxEyeLap.Location = new System.Drawing.Point(238, 87);
+            this.pictureBoxEyeLap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxEyeLap.Name = "pictureBoxEyeLap";
+            this.pictureBoxEyeLap.Size = new System.Drawing.Size(28, 30);
+            this.pictureBoxEyeLap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEyeLap.TabIndex = 23;
+            this.pictureBoxEyeLap.TabStop = false;
             // 
             // tabPage11
             // 
@@ -1711,6 +1724,7 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage14);
+            this.tabControl1.Controls.Add(this.tabPage15);
             this.tabControl1.Location = new System.Drawing.Point(3, 2);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -1835,84 +1849,6 @@
             this.label17.TabIndex = 8;
             this.label17.Text = "Convert to greyscale";
             // 
-            // dToolStripMenuItem
-            // 
-            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
-            this.dToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.dToolStripMenuItem.Text = "D";
-            // 
-            // mainPicture
-            // 
-            this.mainPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPicture.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.mainPicture.Location = new System.Drawing.Point(576, 113);
-            this.mainPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mainPicture.Name = "mainPicture";
-            this.mainPicture.Size = new System.Drawing.Size(412, 540);
-            this.mainPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.mainPicture.TabIndex = 3;
-            this.mainPicture.TabStop = false;
-            this.mainPicture.Click += new System.EventHandler(this.mainPicture_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox2.InitialImage = global::EdgeDetection.Properties.Resources.boat;
-            this.pictureBox2.Location = new System.Drawing.Point(133, 113);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(91, 107);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.InitialImage = global::EdgeDetection.Properties.Resources.flower;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 113);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 107);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox3.InitialImage = global::EdgeDetection.Properties.Resources.house;
-            this.pictureBox3.Location = new System.Drawing.Point(231, 113);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(91, 107);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox4.InitialImage = global::EdgeDetection.Properties.Resources.book_page;
-            this.pictureBox4.Location = new System.Drawing.Point(328, 113);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(91, 107);
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox5.InitialImage = global::EdgeDetection.Properties.Resources.portrait2;
-            this.pictureBox5.Location = new System.Drawing.Point(425, 113);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(91, 107);
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
-            // 
             // tabPage14
             // 
             this.tabPage14.Controls.Add(this.label61);
@@ -1934,150 +1870,14 @@
             this.tabPage14.Text = "Shrink & Expand";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
-            // button26
+            // label61
             // 
-            this.button26.Location = new System.Drawing.Point(359, 139);
-            this.button26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(139, 33);
-            this.button26.TabIndex = 6;
-            this.button26.Text = "apply shrink";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(368, 288);
-            this.button27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(139, 33);
-            this.button27.TabIndex = 7;
-            this.button27.Text = "apply expand";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.Click += new System.EventHandler(this.button27_Click);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(22, 20);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(135, 20);
-            this.label52.TabIndex = 9;
-            this.label52.Text = "Shrink (Erosion):";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(22, 180);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(143, 20);
-            this.label55.TabIndex = 10;
-            this.label55.Text = "Expand (Dilation):";
-            // 
-            // label57
-            // 
-            this.label57.Location = new System.Drawing.Point(23, 52);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(475, 40);
-            this.label57.TabIndex = 25;
-            this.label57.Text = "This operation will remove small white noises and detach two connected objects. I" +
-    "t is used to make edges thinner.";
-            // 
-            // label39
-            // 
-            this.label39.Location = new System.Drawing.Point(23, 210);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(475, 40);
-            this.label39.TabIndex = 26;
-            this.label39.Text = "This operation will enlarge the white regions (edges). It is useful for connectin" +
-    "g broken parts of an object or filling small holes.";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label58);
-            this.panel2.Controls.Add(this.label56);
-            this.panel2.Controls.Add(this.radioButton3S);
-            this.panel2.Controls.Add(this.radioButton2S);
-            this.panel2.Controls.Add(this.radioButton1S);
-            this.panel2.Location = new System.Drawing.Point(26, 115);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(293, 44);
-            this.panel2.TabIndex = 27;
-            // 
-            // radioButton1S
-            // 
-            this.radioButton1S.AutoSize = true;
-            this.radioButton1S.Checked = true;
-            this.radioButton1S.Location = new System.Drawing.Point(3, 13);
-            this.radioButton1S.Name = "radioButton1S";
-            this.radioButton1S.Size = new System.Drawing.Size(48, 20);
-            this.radioButton1S.TabIndex = 0;
-            this.radioButton1S.TabStop = true;
-            this.radioButton1S.Text = "3x3";
-            this.radioButton1S.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2S
-            // 
-            this.radioButton2S.AutoSize = true;
-            this.radioButton2S.Location = new System.Drawing.Point(117, 13);
-            this.radioButton2S.Name = "radioButton2S";
-            this.radioButton2S.Size = new System.Drawing.Size(48, 20);
-            this.radioButton2S.TabIndex = 1;
-            this.radioButton2S.Text = "5x5";
-            this.radioButton2S.UseVisualStyleBackColor = true;
-            this.radioButton2S.CheckedChanged += new System.EventHandler(this.radioButton2S_CheckedChanged);
-            // 
-            // radioButton3S
-            // 
-            this.radioButton3S.AutoSize = true;
-            this.radioButton3S.Location = new System.Drawing.Point(171, 13);
-            this.radioButton3S.Name = "radioButton3S";
-            this.radioButton3S.Size = new System.Drawing.Size(48, 20);
-            this.radioButton3S.TabIndex = 2;
-            this.radioButton3S.Text = "7x7";
-            this.radioButton3S.UseVisualStyleBackColor = true;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(57, 15);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(54, 16);
-            this.label56.TabIndex = 3;
-            this.label56.Text = "(fastest)";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(225, 15);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(60, 16);
-            this.label58.TabIndex = 4;
-            this.label58.Text = "(slowest)";
-            // 
-            // pictureBoxEyeShrink
-            // 
-            this.pictureBoxEyeShrink.InitialImage = global::EdgeDetection.Properties.Resources.eye;
-            this.pictureBoxEyeShrink.Location = new System.Drawing.Point(325, 118);
-            this.pictureBoxEyeShrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxEyeShrink.Name = "pictureBoxEyeShrink";
-            this.pictureBoxEyeShrink.Size = new System.Drawing.Size(28, 30);
-            this.pictureBoxEyeShrink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEyeShrink.TabIndex = 28;
-            this.pictureBoxEyeShrink.TabStop = false;
-            // 
-            // pictureBoxEyeExpand
-            // 
-            this.pictureBoxEyeExpand.InitialImage = global::EdgeDetection.Properties.Resources.eye;
-            this.pictureBoxEyeExpand.Location = new System.Drawing.Point(334, 268);
-            this.pictureBoxEyeExpand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxEyeExpand.Name = "pictureBoxEyeExpand";
-            this.pictureBoxEyeExpand.Size = new System.Drawing.Size(28, 30);
-            this.pictureBoxEyeExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEyeExpand.TabIndex = 29;
-            this.pictureBoxEyeExpand.TabStop = false;
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(26, 96);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(75, 16);
+            this.label61.TabIndex = 30;
+            this.label61.Text = "Kernel size:";
             // 
             // panel3
             // 
@@ -2141,21 +1941,283 @@
             this.radioButton1E.Text = "3x3";
             this.radioButton1E.UseVisualStyleBackColor = true;
             // 
-            // imageInNewWindowToolStripMenuItem
+            // pictureBoxEyeExpand
             // 
-            this.imageInNewWindowToolStripMenuItem.Name = "imageInNewWindowToolStripMenuItem";
-            this.imageInNewWindowToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.imageInNewWindowToolStripMenuItem.Text = "Image  in New Window";
-            this.imageInNewWindowToolStripMenuItem.Click += new System.EventHandler(this.imageInNewWindowToolStripMenuItem_Click);
+            this.pictureBoxEyeExpand.InitialImage = global::EdgeDetection.Properties.Resources.eye;
+            this.pictureBoxEyeExpand.Location = new System.Drawing.Point(334, 266);
+            this.pictureBoxEyeExpand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxEyeExpand.Name = "pictureBoxEyeExpand";
+            this.pictureBoxEyeExpand.Size = new System.Drawing.Size(28, 30);
+            this.pictureBoxEyeExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEyeExpand.TabIndex = 29;
+            this.pictureBoxEyeExpand.TabStop = false;
             // 
-            // label61
+            // pictureBoxEyeShrink
             // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(26, 96);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(75, 16);
-            this.label61.TabIndex = 30;
-            this.label61.Text = "Kernel size:";
+            this.pictureBoxEyeShrink.InitialImage = global::EdgeDetection.Properties.Resources.eye;
+            this.pictureBoxEyeShrink.Location = new System.Drawing.Point(334, 129);
+            this.pictureBoxEyeShrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxEyeShrink.Name = "pictureBoxEyeShrink";
+            this.pictureBoxEyeShrink.Size = new System.Drawing.Size(28, 30);
+            this.pictureBoxEyeShrink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEyeShrink.TabIndex = 28;
+            this.pictureBoxEyeShrink.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label58);
+            this.panel2.Controls.Add(this.label56);
+            this.panel2.Controls.Add(this.radioButton3S);
+            this.panel2.Controls.Add(this.radioButton2S);
+            this.panel2.Controls.Add(this.radioButton1S);
+            this.panel2.Location = new System.Drawing.Point(26, 115);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(293, 44);
+            this.panel2.TabIndex = 27;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(225, 15);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(60, 16);
+            this.label58.TabIndex = 4;
+            this.label58.Text = "(slowest)";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(57, 15);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(54, 16);
+            this.label56.TabIndex = 3;
+            this.label56.Text = "(fastest)";
+            // 
+            // radioButton3S
+            // 
+            this.radioButton3S.AutoSize = true;
+            this.radioButton3S.Location = new System.Drawing.Point(171, 13);
+            this.radioButton3S.Name = "radioButton3S";
+            this.radioButton3S.Size = new System.Drawing.Size(48, 20);
+            this.radioButton3S.TabIndex = 2;
+            this.radioButton3S.Text = "7x7";
+            this.radioButton3S.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2S
+            // 
+            this.radioButton2S.AutoSize = true;
+            this.radioButton2S.Location = new System.Drawing.Point(117, 13);
+            this.radioButton2S.Name = "radioButton2S";
+            this.radioButton2S.Size = new System.Drawing.Size(48, 20);
+            this.radioButton2S.TabIndex = 1;
+            this.radioButton2S.Text = "5x5";
+            this.radioButton2S.UseVisualStyleBackColor = true;
+            this.radioButton2S.CheckedChanged += new System.EventHandler(this.radioButton2S_CheckedChanged);
+            // 
+            // radioButton1S
+            // 
+            this.radioButton1S.AutoSize = true;
+            this.radioButton1S.Checked = true;
+            this.radioButton1S.Location = new System.Drawing.Point(3, 13);
+            this.radioButton1S.Name = "radioButton1S";
+            this.radioButton1S.Size = new System.Drawing.Size(48, 20);
+            this.radioButton1S.TabIndex = 0;
+            this.radioButton1S.TabStop = true;
+            this.radioButton1S.Text = "3x3";
+            this.radioButton1S.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.Location = new System.Drawing.Point(23, 210);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(475, 40);
+            this.label39.TabIndex = 26;
+            this.label39.Text = "This operation will enlarge the white regions (edges). It is useful for connectin" +
+    "g broken parts of an object or filling small holes.";
+            // 
+            // label57
+            // 
+            this.label57.Location = new System.Drawing.Point(23, 52);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(475, 40);
+            this.label57.TabIndex = 25;
+            this.label57.Text = "This operation will remove small white noises and detach two connected objects. I" +
+    "t is used to make edges thinner.";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(22, 180);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(143, 20);
+            this.label55.TabIndex = 10;
+            this.label55.Text = "Expand (Dilation):";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(22, 20);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(135, 20);
+            this.label52.TabIndex = 9;
+            this.label52.Text = "Shrink (Erosion):";
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(372, 284);
+            this.button27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(139, 33);
+            this.button27.TabIndex = 7;
+            this.button27.Text = "apply expand";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(372, 142);
+            this.button26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(139, 33);
+            this.button26.TabIndex = 6;
+            this.button26.Text = "apply shrink";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.button29);
+            this.tabPage15.Controls.Add(this.label63);
+            this.tabPage15.Controls.Add(this.button28);
+            this.tabPage15.Controls.Add(this.label62);
+            this.tabPage15.Location = new System.Drawing.Point(4, 25);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(517, 333);
+            this.tabPage15.TabIndex = 3;
+            this.tabPage15.Text = "Thinning";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(334, 78);
+            this.button28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(122, 27);
+            this.button28.TabIndex = 11;
+            this.button28.Text = "apply ";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(28, 24);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(240, 20);
+            this.label62.TabIndex = 10;
+            this.label62.Text = "Zhang-Suen thinning algorithm:";
+            // 
+            // dToolStripMenuItem
+            // 
+            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
+            this.dToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.dToolStripMenuItem.Text = "D";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox5.InitialImage = global::EdgeDetection.Properties.Resources.portrait2;
+            this.pictureBox5.Location = new System.Drawing.Point(425, 113);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(91, 107);
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox4.InitialImage = global::EdgeDetection.Properties.Resources.book_page;
+            this.pictureBox4.Location = new System.Drawing.Point(328, 113);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(91, 107);
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox3.InitialImage = global::EdgeDetection.Properties.Resources.house;
+            this.pictureBox3.Location = new System.Drawing.Point(231, 113);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(91, 107);
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.InitialImage = global::EdgeDetection.Properties.Resources.flower;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 113);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(91, 107);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox2.InitialImage = global::EdgeDetection.Properties.Resources.boat;
+            this.pictureBox2.Location = new System.Drawing.Point(133, 113);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(91, 107);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // mainPicture
+            // 
+            this.mainPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPicture.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.mainPicture.Location = new System.Drawing.Point(576, 113);
+            this.mainPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainPicture.Name = "mainPicture";
+            this.mainPicture.Size = new System.Drawing.Size(412, 540);
+            this.mainPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.mainPicture.TabIndex = 3;
+            this.mainPicture.TabStop = false;
+            this.mainPicture.Click += new System.EventHandler(this.mainPicture_Click);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(29, 54);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(253, 16);
+            this.label63.TabIndex = 12;
+            this.label63.Text = "Works the best with canny edge detection";
+            // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(334, 169);
+            this.button29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(122, 27);
+            this.button29.TabIndex = 13;
+            this.button29.Text = "Detect corners";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click_1);
             // 
             // Form1
             // 
@@ -2226,20 +2288,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarBlur)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeExpand)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeExpand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2426,6 +2490,11 @@
         private System.Windows.Forms.RadioButton radioButton1E;
         private System.Windows.Forms.ToolStripMenuItem imageInNewWindowToolStripMenuItem;
         private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Button button29;
     }
 }
 

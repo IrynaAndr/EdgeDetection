@@ -865,7 +865,7 @@ namespace EdgeDetection
             {
                 kernelSize = 7;
             }
-            originalImage = preprocessing.Erode(originalImage, kernelSize);
+            originalImage = preprocessing.Erode((Bitmap)mainPicture.Image, kernelSize);
             updateMainPicture();
         }
 
@@ -884,7 +884,7 @@ namespace EdgeDetection
             {
                 kernelSize = 7;
             }
-            originalImage = preprocessing.Dilate(originalImage, kernelSize);
+            originalImage = preprocessing.Dilate((Bitmap)mainPicture.Image, kernelSize);
             updateMainPicture();
         }
 
@@ -898,6 +898,24 @@ namespace EdgeDetection
         private void radioButton2S_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            originalImage = preprocessing.Thinning((Bitmap)mainPicture.Image);
+            updateMainPicture();
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            originalImage = preprocessing.ThinningFromLibrary((Bitmap)mainPicture.Image);
+            updateMainPicture();
+        }
+
+        private void button29_Click_1(object sender, EventArgs e)
+        {
+            originalImage = preprocessing.DetectHarrisCorners((Bitmap)mainPicture.Image);
+            updateMainPicture();
         }
     }
 }
