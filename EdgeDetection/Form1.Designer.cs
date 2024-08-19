@@ -204,6 +204,8 @@
             this.button27 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.button29 = new System.Windows.Forms.Button();
+            this.label63 = new System.Windows.Forms.Label();
             this.button28 = new System.Windows.Forms.Button();
             this.label62 = new System.Windows.Forms.Label();
             this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -213,8 +215,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mainPicture = new System.Windows.Forms.PictureBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.button29 = new System.Windows.Forms.Button();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
@@ -264,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).BeginInit();
+            this.tabPage16.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -1009,6 +1018,7 @@
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage16);
             this.tabControl2.Controls.Add(this.tabPage10);
             this.tabControl2.Controls.Add(this.tabPage12);
             this.tabControl2.Controls.Add(this.tabPage11);
@@ -2100,6 +2110,26 @@
             this.tabPage15.Text = "Thinning";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(334, 169);
+            this.button29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(122, 27);
+            this.button29.TabIndex = 13;
+            this.button29.Text = "Detect corners";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click_1);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(29, 54);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(253, 16);
+            this.label63.TabIndex = 12;
+            this.label63.Text = "Works the best with canny edge detection";
+            // 
             // button28
             // 
             this.button28.Location = new System.Drawing.Point(334, 78);
@@ -2199,25 +2229,92 @@
             this.mainPicture.TabStop = false;
             this.mainPicture.Click += new System.EventHandler(this.mainPicture_Click);
             // 
-            // label63
+            // tabPage16
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(29, 54);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(253, 16);
-            this.label63.TabIndex = 12;
-            this.label63.Text = "Works the best with canny edge detection";
+            this.tabPage16.Controls.Add(this.button31);
+            this.tabPage16.Controls.Add(this.button30);
+            this.tabPage16.Controls.Add(this.label68);
+            this.tabPage16.Controls.Add(this.label67);
+            this.tabPage16.Controls.Add(this.label66);
+            this.tabPage16.Controls.Add(this.label65);
+            this.tabPage16.Controls.Add(this.label64);
+            this.tabPage16.Location = new System.Drawing.Point(4, 25);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(520, 337);
+            this.tabPage16.TabIndex = 4;
+            this.tabPage16.Text = "Scharr/RobertCross";
+            this.tabPage16.UseVisualStyleBackColor = true;
             // 
-            // button29
+            // label64
             // 
-            this.button29.Location = new System.Drawing.Point(334, 169);
-            this.button29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(122, 27);
-            this.button29.TabIndex = 13;
-            this.button29.Text = "Detect corners";
-            this.button29.UseVisualStyleBackColor = true;
-            this.button29.Click += new System.EventHandler(this.button29_Click_1);
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(28, 23);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(232, 20);
+            this.label64.TabIndex = 8;
+            this.label64.Text = "Other gradient-base methods:";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(61, 62);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(135, 20);
+            this.label65.TabIndex = 9;
+            this.label65.Text = "Scharr Operator:";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(61, 186);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(185, 20);
+            this.label66.TabIndex = 10;
+            this.label66.Text = "Robert Cross Operator:";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(62, 93);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(27, 16);
+            this.label67.TabIndex = 11;
+            this.label67.Text = "3x3";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(71, 224);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(27, 16);
+            this.label68.TabIndex = 12;
+            this.label68.Text = "2x2";
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(256, 90);
+            this.button30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(75, 23);
+            this.button30.TabIndex = 13;
+            this.button30.Text = "apply";
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(256, 221);
+            this.button31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(75, 23);
+            this.button31.TabIndex = 14;
+            this.button31.Text = "apply";
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // Form1
             // 
@@ -2304,6 +2401,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).EndInit();
+            this.tabPage16.ResumeLayout(false);
+            this.tabPage16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2495,6 +2594,14 @@
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label67;
     }
 }
 

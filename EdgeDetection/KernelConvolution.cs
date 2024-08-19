@@ -41,7 +41,34 @@ namespace EdgeDetection
             {  0,  0,  0 },
             {  1,  1,  1 }
         };
-        
+
+        //Scharr kernels:
+        public static double[,] ScharrX = new double[3, 3]
+        {
+            { 3, 0, -3 },
+            { 10, 0, -10},
+            { 3, 0, -3 }
+        };
+
+        public static double[,] ScharrY = new double[3, 3]
+        {
+            { 3, 10, 3 },
+            {  0,  0,  0 },
+            {  -3,  -10,  -3 }
+        };
+        //RobertCross kernels:
+        public static double[,] RobertCrossX = new double[2, 2]
+        {
+            { 1, 0},
+            { 0, -1 }
+        };
+
+        public static double[,] RobertCrossY = new double[2, 2]
+        {
+             { 0, 1},
+            { -1, 0 }
+        };
+
         public static double[,] sobelX5x5 = new double[5, 5]
         {
             { -1, -2, 0, 2, 1 },
@@ -209,6 +236,18 @@ namespace EdgeDetection
         public static Bitmap applyPrewitt(Bitmap image)
         {
             Bitmap prewittResultBitmap = ApplyDoubleConvolutionFilter(image, prewittX, prewittY);
+            return prewittResultBitmap;
+        }
+
+        public static Bitmap applyScharr(Bitmap image)
+        {
+            Bitmap prewittResultBitmap = ApplyDoubleConvolutionFilter(image, ScharrX, ScharrY);
+            return prewittResultBitmap;
+        }
+
+        public static Bitmap applyRobertCross(Bitmap image)
+        {
+            Bitmap prewittResultBitmap = ApplyDoubleConvolutionFilter(image, RobertCrossX, RobertCrossY);
             return prewittResultBitmap;
         }
 

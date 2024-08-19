@@ -10,6 +10,9 @@ using Accord.Imaging.Filters;
 using Accord.Statistics.Kernels;
 using Accord.Imaging;
 using Accord;
+using Emgu.CV;
+using Emgu.CV.CvEnum;
+using Emgu.CV.Structure;
 
 namespace EdgeDetection
 {
@@ -283,27 +286,24 @@ namespace EdgeDetection
 
         public static Bitmap DetectHarrisCorners(Bitmap image)
         {
-            // Convert image to grayscale if it's not already
+            //convert to greyscale if not already
             Grayscale grayscaleFilter = new Grayscale(0.2125, 0.7154, 0.0721);
             Bitmap grayImage = grayscaleFilter.Apply(image);
 
-            // Apply Harris Corner Detector
             HarrisCornersDetector harrisDetector = new HarrisCornersDetector( 0.04f,  5);
             List<IntPoint> corners = harrisDetector.ProcessImage(grayImage);
 
-            // Draw corners on the original image
             using (Graphics g = Graphics.FromImage(image))
             {
                 foreach (IntPoint corner in corners)
                 {
-                    // Draw a small circle at each detected corner
                     g.FillEllipse(Brushes.Red, corner.X - 3, corner.Y - 3, 6, 6);
                 }
             }
-
-            // Save or display the result image
             return image;
         }
+
+       
 
     }
 }

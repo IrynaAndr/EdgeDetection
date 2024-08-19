@@ -917,5 +917,18 @@ namespace EdgeDetection
             originalImage = preprocessing.DetectHarrisCorners((Bitmap)mainPicture.Image);
             updateMainPicture();
         }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            
+            originalImage = KernelConvolution.applyScharr(originalImage);
+            updateMainPicture();
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            originalImage = KernelConvolution.applyRobertCross(originalImage);
+            updateMainPicture();
+        }
     }
 }
