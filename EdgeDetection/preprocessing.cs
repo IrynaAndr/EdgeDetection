@@ -63,6 +63,26 @@ namespace EdgeDetection
             return grayImage;
         }
         */
+        public static Bitmap ApplyNegativeFilter(Bitmap sourceBitmap)
+        {
+            int width = sourceBitmap.Width;
+            int height = sourceBitmap.Height;
+
+            Bitmap negativeBitmap = new Bitmap(width, height);
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    Color originalColor = sourceBitmap.GetPixel(x, y);
+                    // Invert the color
+                    Color invertedColor = Color.FromArgb(255 - originalColor.R, 255 - originalColor.G, 255 - originalColor.B);
+                    negativeBitmap.SetPixel(x, y, invertedColor);
+                }
+            }
+
+            return negativeBitmap;
+        }
 
         public static Bitmap Erode(Bitmap image, int kernelSize )
         {

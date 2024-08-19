@@ -930,5 +930,27 @@ namespace EdgeDetection
             originalImage = KernelConvolution.applyRobertCross(originalImage);
             updateMainPicture();
         }
+
+        private void negativeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            originalImage = preprocessing.ApplyNegativeFilter(originalImage);
+            updateMainPicture();
+        }
+
+        private void blurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            originalImage = KernelConvolution.applyScharr(originalImage);
+            updateMainPicture();
+        }
+
+        private void label69_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

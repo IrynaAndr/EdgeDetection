@@ -247,7 +247,7 @@ namespace EdgeDetection
 
         public static Bitmap applyRobertCross(Bitmap image)
         {
-            Bitmap prewittResultBitmap = ApplyDoubleConvolutionFilter(image, RobertCrossX, RobertCrossY);
+            Bitmap prewittResultBitmap = ApplySingleKernelConvolution(image, RobertCrossX);
             return prewittResultBitmap;
         }
 

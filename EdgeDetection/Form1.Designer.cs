@@ -215,14 +215,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mainPicture = new System.Windows.Forms.PictureBox();
-            this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
+            this.negativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.button32 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
@@ -272,7 +268,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).BeginInit();
-            this.tabPage16.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -789,7 +784,8 @@
             this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.convertToGreyToolStripMenuItem,
             this.blurToolStripMenuItem,
-            this.sharpImageToolStripMenuItem});
+            this.sharpImageToolStripMenuItem,
+            this.negativeToolStripMenuItem});
             this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
             this.effectsToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
             this.effectsToolStripMenuItem.Text = "Photo";
@@ -808,8 +804,9 @@
             this.gaussianBlur5x5ToolStripMenuItem,
             this.boxBlurToolStripMenuItem});
             this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            this.blurToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.blurToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.blurToolStripMenuItem.Text = "Blur";
+            this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
             // 
             // gaussianBlur3x3ToolStripMenuItem
             // 
@@ -1018,7 +1015,6 @@
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Controls.Add(this.tabPage16);
             this.tabControl2.Controls.Add(this.tabPage10);
             this.tabControl2.Controls.Add(this.tabPage12);
             this.tabControl2.Controls.Add(this.tabPage11);
@@ -1031,6 +1027,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button32);
+            this.tabPage1.Controls.Add(this.label70);
+            this.tabPage1.Controls.Add(this.label69);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.button16);
@@ -2229,92 +2228,43 @@
             this.mainPicture.TabStop = false;
             this.mainPicture.Click += new System.EventHandler(this.mainPicture_Click);
             // 
-            // tabPage16
+            // negativeToolStripMenuItem
             // 
-            this.tabPage16.Controls.Add(this.button31);
-            this.tabPage16.Controls.Add(this.button30);
-            this.tabPage16.Controls.Add(this.label68);
-            this.tabPage16.Controls.Add(this.label67);
-            this.tabPage16.Controls.Add(this.label66);
-            this.tabPage16.Controls.Add(this.label65);
-            this.tabPage16.Controls.Add(this.label64);
-            this.tabPage16.Location = new System.Drawing.Point(4, 25);
-            this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(520, 337);
-            this.tabPage16.TabIndex = 4;
-            this.tabPage16.Text = "Scharr/RobertCross";
-            this.tabPage16.UseVisualStyleBackColor = true;
+            this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.negativeToolStripMenuItem.Text = "Negative";
+            this.negativeToolStripMenuItem.Click += new System.EventHandler(this.negativeToolStripMenuItem_Click);
             // 
-            // label64
+            // label69
             // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(28, 23);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(232, 20);
-            this.label64.TabIndex = 8;
-            this.label64.Text = "Other gradient-base methods:";
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(25, 229);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(64, 20);
+            this.label69.TabIndex = 25;
+            this.label69.Text = "Scharr:";
+            this.label69.Click += new System.EventHandler(this.label69_Click);
             // 
-            // label65
+            // label70
             // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(61, 62);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(135, 20);
-            this.label65.TabIndex = 9;
-            this.label65.Text = "Scharr Operator:";
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(49, 263);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(27, 16);
+            this.label70.TabIndex = 26;
+            this.label70.Text = "3x3";
             // 
-            // label66
+            // button32
             // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(61, 186);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(185, 20);
-            this.label66.TabIndex = 10;
-            this.label66.Text = "Robert Cross Operator:";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(62, 93);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(27, 16);
-            this.label67.TabIndex = 11;
-            this.label67.Text = "3x3";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(71, 224);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(27, 16);
-            this.label68.TabIndex = 12;
-            this.label68.Text = "2x2";
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(256, 90);
-            this.button30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 23);
-            this.button30.TabIndex = 13;
-            this.button30.Text = "apply";
-            this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(256, 221);
-            this.button31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 23);
-            this.button31.TabIndex = 14;
-            this.button31.Text = "apply";
-            this.button31.UseVisualStyleBackColor = true;
-            this.button31.Click += new System.EventHandler(this.button31_Click);
+            this.button32.Location = new System.Drawing.Point(91, 260);
+            this.button32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(75, 23);
+            this.button32.TabIndex = 27;
+            this.button32.Text = "apply";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // Form1
             // 
@@ -2401,8 +2351,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).EndInit();
-            this.tabPage16.ResumeLayout(false);
-            this.tabPage16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2594,14 +2542,10 @@
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.TabPage tabPage16;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.ToolStripMenuItem negativeToolStripMenuItem;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label69;
     }
 }
 
