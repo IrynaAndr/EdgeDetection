@@ -87,6 +87,7 @@
             this.sharpImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sharpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unsharpMaskingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.negativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.histogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,6 +108,9 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button32 = new System.Windows.Forms.Button();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
@@ -215,10 +219,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mainPicture = new System.Windows.Forms.PictureBox();
-            this.negativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.button32 = new System.Windows.Forms.Button();
+            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.button30 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
@@ -268,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -306,6 +315,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button30);
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.label_resultOtsu);
             this.tabPage4.Controls.Add(this.label13);
@@ -804,7 +814,7 @@
             this.gaussianBlur5x5ToolStripMenuItem,
             this.boxBlurToolStripMenuItem});
             this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            this.blurToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blurToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.blurToolStripMenuItem.Text = "Blur";
             this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
             // 
@@ -851,6 +861,13 @@
             this.unsharpMaskingToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.unsharpMaskingToolStripMenuItem.Text = "Unsharp masking";
             this.unsharpMaskingToolStripMenuItem.Click += new System.EventHandler(this.unsharpMaskingToolStripMenuItem_Click);
+            // 
+            // negativeToolStripMenuItem
+            // 
+            this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.negativeToolStripMenuItem.Text = "Negative";
+            this.negativeToolStripMenuItem.Click += new System.EventHandler(this.negativeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -1053,6 +1070,37 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sobel/Prewitt";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(91, 260);
+            this.button32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(75, 23);
+            this.button32.TabIndex = 27;
+            this.button32.Text = "apply";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(49, 263);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(27, 16);
+            this.label70.TabIndex = 26;
+            this.label70.Text = "3x3";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(25, 229);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(64, 20);
+            this.label69.TabIndex = 25;
+            this.label69.Text = "Scharr:";
+            this.label69.Click += new System.EventHandler(this.label69_Click);
             // 
             // panel1
             // 
@@ -2097,6 +2145,13 @@
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.label68);
+            this.tabPage15.Controls.Add(this.checkBox2);
+            this.tabPage15.Controls.Add(this.label67);
+            this.tabPage15.Controls.Add(this.label66);
+            this.tabPage15.Controls.Add(this.label65);
+            this.tabPage15.Controls.Add(this.label64);
+            this.tabPage15.Controls.Add(this.trackBar4);
             this.tabPage15.Controls.Add(this.button29);
             this.tabPage15.Controls.Add(this.label63);
             this.tabPage15.Controls.Add(this.button28);
@@ -2111,7 +2166,7 @@
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(334, 169);
+            this.button29.Location = new System.Drawing.Point(334, 221);
             this.button29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(122, 27);
@@ -2228,43 +2283,85 @@
             this.mainPicture.TabStop = false;
             this.mainPicture.Click += new System.EventHandler(this.mainPicture_Click);
             // 
-            // negativeToolStripMenuItem
+            // trackBar4
             // 
-            this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
-            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.negativeToolStripMenuItem.Text = "Negative";
-            this.negativeToolStripMenuItem.Click += new System.EventHandler(this.negativeToolStripMenuItem_Click);
+            this.trackBar4.Location = new System.Drawing.Point(70, 204);
+            this.trackBar4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar4.Maximum = 15;
+            this.trackBar4.Minimum = 1;
+            this.trackBar4.Name = "trackBar4";
+            this.trackBar4.Size = new System.Drawing.Size(198, 56);
+            this.trackBar4.TabIndex = 14;
+            this.trackBar4.Value = 4;
+            this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
             // 
-            // label69
+            // label64
             // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(25, 229);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(64, 20);
-            this.label69.TabIndex = 25;
-            this.label69.Text = "Scharr:";
-            this.label69.Click += new System.EventHandler(this.label69_Click);
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(42, 143);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(187, 20);
+            this.label64.TabIndex = 15;
+            this.label64.Text = "Harris corner detection:";
             // 
-            // label70
+            // label65
             // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(49, 263);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(27, 16);
-            this.label70.TabIndex = 26;
-            this.label70.Text = "3x3";
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(43, 173);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(148, 16);
+            this.label65.TabIndex = 16;
+            this.label65.Text = "Quality level parameter:";
             // 
-            // button32
+            // label66
             // 
-            this.button32.Location = new System.Drawing.Point(91, 260);
-            this.button32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(75, 23);
-            this.button32.TabIndex = 27;
-            this.button32.Text = "apply";
-            this.button32.UseVisualStyleBackColor = true;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(33, 221);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(31, 16);
+            this.label66.TabIndex = 17;
+            this.label66.Text = "0,01";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(274, 221);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(31, 16);
+            this.label67.TabIndex = 18;
+            this.label67.Text = "0,15";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(364, 262);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(58, 20);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "Hide";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(102, 266);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(51, 16);
+            this.label68.TabIndex = 20;
+            this.label68.Text = "label68";
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(333, 128);
+            this.button30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(92, 23);
+            this.button30.TabIndex = 14;
+            this.button30.Text = "Apply";
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click_1);
             // 
             // Form1
             // 
@@ -2351,6 +2448,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2546,6 +2644,14 @@
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TrackBar trackBar4;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Button button30;
     }
 }
 

@@ -914,8 +914,10 @@ namespace EdgeDetection
 
         private void button29_Click_1(object sender, EventArgs e)
         {
-            originalImage = preprocessing.DetectHarrisCorners((Bitmap)mainPicture.Image);
-            updateMainPicture();
+            float qualityLevel = trackBar4.Value/ 100;
+            Bitmap copy = extraFunctions.DeepCopyBitmap(originalImage);
+            Bitmap res = preprocessing.DetectHarrisCorners(copy, qualityLevel);
+            mainPicture.Image = res;
         }
 
         private void button30_Click(object sender, EventArgs e)
@@ -951,6 +953,32 @@ namespace EdgeDetection
         private void label69_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void trackBar1_Scroll_3(object sender, EventArgs e)
+        {
+            //`harrisQualityLevel` (typically a value between 0.01 and 0.15) 
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+
+            float qualityLevel = (float)(trackBar4.Value * 0.01);
+            label68.Text = qualityLevel.ToString();
+            Bitmap copy = extraFunctions.DeepCopyBitmap(originalImage);
+            Bitmap res = preprocessing.DetectHarrisCorners(copy, qualityLevel);
+            mainPicture.Image = res;
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            mainPicture.Image = originalImage; 
+        }
+
+        private void button30_Click_1(object sender, EventArgs e)
+        {
+            captureResult();
         }
     }
 }
