@@ -17,7 +17,6 @@ namespace EdgeDetection
             int w = image.Width;
             int h = image.Height;
 
-            // Lock the image data for read and write
             BitmapData imageData = image.LockBits(
                 new Rectangle(0, 0, w, h),
                 ImageLockMode.ReadWrite,
@@ -27,11 +26,9 @@ namespace EdgeDetection
             byte[] buffer = new byte[bytes];
             byte[] result = new byte[bytes];
 
-            // Copy image data into buffer
             Marshal.Copy(imageData.Scan0, buffer, 0, bytes);
             // Get global mean (average intensity)
             double mg = CalculateGlobalMean(buffer, bytes);
-            // Process each pixel in the image
             for (int i = 0; i < bytes; i += 3)
             {
                 int intensity = buffer[i];
@@ -40,10 +37,8 @@ namespace EdgeDetection
                 double localMean = CalculateLocalMean(buffer, imageData.Stride, i, w, h);
                 double localStdDev = CalculateLocalStandardDeviation(buffer, imageData.Stride, i, localMean, w, h);
 
-                // Calculate threshold using local properties
                 double threshold = a * localStdDev + b * mg;
 
-                // Apply thresholding to each color channel (RGB)
                 for (int c = 0; c < 3; c++)
                 {
                     result[i + c] = (byte)((intensity > threshold) ? 255 : 0);
@@ -203,43 +198,33 @@ namespace EdgeDetection
             int width = image.Width;
             int height = image.Height;
 
-            // Lock the input image data for direct pixel manipulation
             BitmapData imageData = image.LockBits(
                 new Rectangle(0, 0, width, height),
                 ImageLockMode.ReadWrite,
                 PixelFormat.Format24bppRgb);
 
-            // Get the number of bytes per row (stride) and total image size
             int bytesPerPixel = 3; // 24bpp RGB format (3 bytes per pixel)
             int stride = imageData.Stride;
             int imageSize = stride * height;
 
-            // Create byte arrays for image data
             byte[] buffer = new byte[imageSize];
             byte[] resultBuffer = new byte[imageSize];
 
-            // Copy image data to buffer
             Marshal.Copy(imageData.Scan0, buffer, 0, imageSize);
 
-            // Perform global thresholding
             for (int i = 0; i < imageSize; i += bytesPerPixel)
             {
-                // Calculate grayscale intensity (average of RGB values)
                 int intensity = (buffer[i] + buffer[i + 1] + buffer[i + 2]) / 3;
 
-                // Apply thresholding
                 byte newValue = (intensity > threshold) ? (byte)255 : (byte)0;
 
-                // Set the same value for R, G, and B components
                 resultBuffer[i] = newValue; // Red
                 resultBuffer[i + 1] = newValue; // Green
                 resultBuffer[i + 2] = newValue; // Blue
             }
 
-            // Copy the result buffer back to image data
             Marshal.Copy(resultBuffer, 0, imageData.Scan0, imageSize);
 
-            // Unlock the image data
             image.UnlockBits(imageData);
 
             return image;

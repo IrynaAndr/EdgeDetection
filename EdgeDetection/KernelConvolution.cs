@@ -127,10 +127,17 @@ namespace EdgeDetection
                             redY += pixelBuffer[calcOffset + 2] * yKernel[filterY + kernelOffset, filterX + kernelOffset];
                         }
                     }
-
+                    //magnitude
                     double blue = Math.Sqrt((blueX * blueX) + (blueY * blueY));
                     double green = Math.Sqrt((greenX * greenX) + (greenY * greenY));
                     double red = Math.Sqrt((redX * redX) + (redY * redY));
+
+                    //orientation 
+                    /*
+                    double blue = Math.Atan2(blueY, blueX) * (180.0 / Math.PI);
+                    double green = Math.Atan2(greenY, greenX) * (180.0 / Math.PI);
+                    double red = Math.Atan2(redY, redX) * (180.0 / Math.PI);
+                    */
 
                     resultBuffer[byteOffset] = ClipByte(blue);
                     resultBuffer[byteOffset + 1] = ClipByte(green);
@@ -392,6 +399,8 @@ namespace EdgeDetection
             { 1,-4, 1 },
             { 0, 1, 0 }
         };
+
+
         
         public static Bitmap applyLaplacian(Bitmap image)
         {
@@ -402,6 +411,19 @@ namespace EdgeDetection
             Bitmap lapalcianResultBitmap = ApplySingleKernelConvolution(image, laplacianKernel);
             return lapalcianResultBitmap;
         }
-        
+
+        //example of a LoG approximation kernel where σ = 1.4
+        public static double[,] loG_sigma = {
+            { 0, 1, 1,2,2,2,1,1,0 },
+            { 1,2, 4,5,5,5,4,2,1 },
+            { 1, 4,5,3, 0,3,5,4,1 },
+            {2,5,3,-12,-24,-12,3,5,2 },
+            {2,5,0,-24,-40,-24,0,5,2 },
+            {2,5,3,-12,-24,-12,3,5,2 },
+            { 1, 4,5,3, 0,3,5,4,1 },
+            { 1,2, 4,5,5,5,4,2,1 },
+            { 0, 1, 1,2,2,2,1,1,0 }
+        };
+
     }
 }

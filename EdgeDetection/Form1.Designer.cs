@@ -34,6 +34,7 @@
             this.button_open_thr = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button30 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label_resultOtsu = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -52,12 +53,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.histogramPictureBox = new System.Windows.Forms.PictureBox();
-            this.Get_histogram = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.textBoxHigh = new System.Windows.Forms.TextBox();
             this.textBoxLow = new System.Windows.Forms.TextBox();
@@ -72,6 +67,12 @@
             this.label46 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.label43 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.histogramPictureBox = new System.Windows.Forms.PictureBox();
+            this.Get_histogram = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -149,6 +150,8 @@
             this.pictureBoxEye2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxEye1 = new System.Windows.Forms.PictureBox();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -208,6 +211,13 @@
             this.button27 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.label68 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.trackBar4 = new System.Windows.Forms.TrackBar();
             this.button29 = new System.Windows.Forms.Button();
             this.label63 = new System.Windows.Forms.Label();
             this.button28 = new System.Windows.Forms.Button();
@@ -219,24 +229,21 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mainPicture = new System.Windows.Forms.PictureBox();
-            this.trackBar4 = new System.Windows.Forms.TrackBar();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.button30 = new System.Windows.Forms.Button();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_questionMark1)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.histogramPictureBox)).BeginInit();
             this.tabPage13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.histogramPictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarG)).BeginInit();
@@ -270,13 +277,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -304,8 +312,8 @@
             // 
             this.tabControl.Controls.Add(this.tabPage4);
             this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Controls.Add(this.tabPage13);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Location = new System.Drawing.Point(3, 2);
             this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl.Name = "tabControl";
@@ -335,6 +343,17 @@
             this.tabPage4.Text = "Global ans otsu";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(333, 128);
+            this.button30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(92, 23);
+            this.button30.TabIndex = 14;
+            this.button30.Text = "Apply";
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click_1);
             // 
             // button5
             // 
@@ -520,73 +539,6 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.histogramPictureBox);
-            this.tabPage3.Controls.Add(this.Get_histogram);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(517, 333);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "--old--";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // histogramPictureBox
-            // 
-            this.histogramPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.histogramPictureBox.Location = new System.Drawing.Point(31, 142);
-            this.histogramPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.histogramPictureBox.Name = "histogramPictureBox";
-            this.histogramPictureBox.Size = new System.Drawing.Size(319, 140);
-            this.histogramPictureBox.TabIndex = 7;
-            this.histogramPictureBox.TabStop = false;
-            // 
-            // Get_histogram
-            // 
-            this.Get_histogram.Location = new System.Drawing.Point(31, 108);
-            this.Get_histogram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Get_histogram.Name = "Get_histogram";
-            this.Get_histogram.Size = new System.Drawing.Size(184, 27);
-            this.Get_histogram.TabIndex = 6;
-            this.Get_histogram.Text = "Get brightness histogram";
-            this.Get_histogram.UseVisualStyleBackColor = true;
-            this.Get_histogram.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(288, 82);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "apply";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(24, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(452, 63);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Between-class variance is a variable, which tells us how good is the separability" +
-    " between the two classes of pixels. However, it’s not a separability measure, it" +
-    "’s its parameter.";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(218, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Maximizes between-class variance.";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // tabPage13
             // 
             this.tabPage13.Controls.Add(this.textBoxHigh);
@@ -735,6 +687,73 @@
             this.label43.Size = new System.Drawing.Size(72, 16);
             this.label43.TabIndex = 0;
             this.label43.Text = "Low range:";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.histogramPictureBox);
+            this.tabPage3.Controls.Add(this.Get_histogram);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(517, 333);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "--old--";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // histogramPictureBox
+            // 
+            this.histogramPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.histogramPictureBox.Location = new System.Drawing.Point(31, 142);
+            this.histogramPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.histogramPictureBox.Name = "histogramPictureBox";
+            this.histogramPictureBox.Size = new System.Drawing.Size(319, 140);
+            this.histogramPictureBox.TabIndex = 7;
+            this.histogramPictureBox.TabStop = false;
+            // 
+            // Get_histogram
+            // 
+            this.Get_histogram.Location = new System.Drawing.Point(31, 108);
+            this.Get_histogram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Get_histogram.Name = "Get_histogram";
+            this.Get_histogram.Size = new System.Drawing.Size(184, 27);
+            this.Get_histogram.TabIndex = 6;
+            this.Get_histogram.Text = "Get brightness histogram";
+            this.Get_histogram.UseVisualStyleBackColor = true;
+            this.Get_histogram.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(288, 82);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "apply";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(24, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(452, 63);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Between-class variance is a variable, which tells us how good is the separability" +
+    " between the two classes of pixels. However, it’s not a separability measure, it" +
+    "’s its parameter.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(218, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Maximizes between-class variance.";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // contextMenuStrip1
             // 
@@ -1504,6 +1523,8 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.textBox5);
+            this.tabPage12.Controls.Add(this.label71);
             this.tabPage12.Controls.Add(this.button18);
             this.tabPage12.Controls.Add(this.label38);
             this.tabPage12.Controls.Add(this.label37);
@@ -1522,6 +1543,23 @@
             this.tabPage12.Text = "Laplacian";
             this.tabPage12.UseVisualStyleBackColor = true;
             this.tabPage12.Click += new System.EventHandler(this.tabPage12_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(382, 219);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(59, 22);
+            this.textBox5.TabIndex = 30;
+            this.textBox5.Text = "100";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(238, 222);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(130, 16);
+            this.label71.TabIndex = 29;
+            this.label71.Text = "Threshold (~50-150):";
             // 
             // button18
             // 
@@ -2145,6 +2183,11 @@
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.label75);
+            this.tabPage15.Controls.Add(this.label74);
+            this.tabPage15.Controls.Add(this.label72);
+            this.tabPage15.Controls.Add(this.label73);
+            this.tabPage15.Controls.Add(this.trackBar1);
             this.tabPage15.Controls.Add(this.label68);
             this.tabPage15.Controls.Add(this.checkBox2);
             this.tabPage15.Controls.Add(this.label67);
@@ -2163,6 +2206,75 @@
             this.tabPage15.TabIndex = 3;
             this.tabPage15.Text = "Thinning";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(148, 244);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(24, 16);
+            this.label68.TabIndex = 20;
+            this.label68.Text = "0.4";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(364, 262);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(58, 20);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "Hide";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(274, 221);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(31, 16);
+            this.label67.TabIndex = 18;
+            this.label67.Text = "0,15";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(33, 221);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(31, 16);
+            this.label66.TabIndex = 17;
+            this.label66.Text = "0,01";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(21, 177);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(148, 16);
+            this.label65.TabIndex = 16;
+            this.label65.Text = "Quality level parameter:";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(42, 143);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(187, 20);
+            this.label64.TabIndex = 15;
+            this.label64.Text = "Harris corner detection:";
+            // 
+            // trackBar4
+            // 
+            this.trackBar4.Location = new System.Drawing.Point(70, 204);
+            this.trackBar4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar4.Maximum = 15;
+            this.trackBar4.Minimum = 1;
+            this.trackBar4.Name = "trackBar4";
+            this.trackBar4.Size = new System.Drawing.Size(198, 56);
+            this.trackBar4.TabIndex = 14;
+            this.trackBar4.Value = 4;
+            this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
             // 
             // button29
             // 
@@ -2283,85 +2395,55 @@
             this.mainPicture.TabStop = false;
             this.mainPicture.Click += new System.EventHandler(this.mainPicture_Click);
             // 
-            // trackBar4
+            // label72
             // 
-            this.trackBar4.Location = new System.Drawing.Point(70, 204);
-            this.trackBar4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.trackBar4.Maximum = 15;
-            this.trackBar4.Minimum = 1;
-            this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(198, 56);
-            this.trackBar4.TabIndex = 14;
-            this.trackBar4.Value = 4;
-            this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(274, 289);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(21, 16);
+            this.label72.TabIndex = 23;
+            this.label72.Text = "50";
             // 
-            // label64
+            // label73
             // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(42, 143);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(187, 20);
-            this.label64.TabIndex = 15;
-            this.label64.Text = "Harris corner detection:";
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(43, 289);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(14, 16);
+            this.label73.TabIndex = 22;
+            this.label73.Text = "1";
+            this.label73.Click += new System.EventHandler(this.label73_Click);
             // 
-            // label65
+            // trackBar1
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(43, 173);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(148, 16);
-            this.label65.TabIndex = 16;
-            this.label65.Text = "Quality level parameter:";
+            this.trackBar1.Location = new System.Drawing.Point(70, 272);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar1.Maximum = 50;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(198, 56);
+            this.trackBar1.SmallChange = 3;
+            this.trackBar1.TabIndex = 21;
+            this.trackBar1.Value = 15;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_4);
             // 
-            // label66
+            // label74
             // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(33, 221);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(31, 16);
-            this.label66.TabIndex = 17;
-            this.label66.Text = "0,01";
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(148, 312);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(21, 16);
+            this.label74.TabIndex = 24;
+            this.label74.Text = "15";
             // 
-            // label67
+            // label75
             // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(274, 221);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(31, 16);
-            this.label67.TabIndex = 18;
-            this.label67.Text = "0,15";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(364, 262);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(58, 20);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Hide";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(102, 266);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(51, 16);
-            this.label68.TabIndex = 20;
-            this.label68.Text = "label68";
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(333, 128);
-            this.button30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(92, 23);
-            this.button30.TabIndex = 14;
-            this.button30.Text = "Apply";
-            this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click_1);
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(21, 254);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(117, 16);
+            this.label75.TabIndex = 25;
+            this.label75.Text = "Minimum distance:";
             // 
             // Form1
             // 
@@ -2390,13 +2472,13 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_questionMark1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.histogramPictureBox)).EndInit();
             this.tabPage13.ResumeLayout(false);
             this.tabPage13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.histogramPictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).EndInit();
@@ -2442,13 +2524,14 @@
             this.panel2.PerformLayout();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2652,6 +2735,13 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label74;
     }
 }
 

@@ -304,13 +304,13 @@ namespace EdgeDetection
         }
         ////// end of ZhangSuen supplementary functions
 
-        public static Bitmap DetectHarrisCorners(Bitmap image, float qualityLevel)
+        public static Bitmap DetectHarrisCorners(Bitmap image, float qualityLevel, float minDistance)
         {
             //convert to greyscale if not already
             Grayscale grayscaleFilter = new Grayscale(0.2125, 0.7154, 0.0721);
             Bitmap grayImage = grayscaleFilter.Apply(image);
 
-            HarrisCornersDetector harrisDetector = new HarrisCornersDetector( qualityLevel,  5);
+            HarrisCornersDetector harrisDetector = new HarrisCornersDetector( qualityLevel, minDistance);
             List<IntPoint> corners = harrisDetector.ProcessImage(grayImage);
 
             using (Graphics g = Graphics.FromImage(image))

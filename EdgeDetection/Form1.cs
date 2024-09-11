@@ -709,7 +709,11 @@ namespace EdgeDetection
 
         private void button18_Click(object sender, EventArgs e)
         {
-            originalImage = ZeroCrossing.DetectZeroCrossings(originalImage);
+
+            //originalImage = ZeroCrossing.DetectZeroCrossings(originalImage);
+            originalImage = KernelConvolution.ApplySingleKernelConvolution(originalImage, KernelConvolution.loG_sigma);
+            // double thr = Convert.ToDouble(textBox5.Text);
+            //originalImage = ZeroCrossing.DetectZeroCrossings(originalImage, thr);
             updateMainPicture();
         }
 
@@ -735,7 +739,6 @@ namespace EdgeDetection
             doubleThresholdedImage = Thresholding.DoubleThresholding(suppressedImage, lowThreshold, highThreshold);
             // Step 5 - Edge Tracking by Hysteresis
             finalEdgeImage = CannyED.EdgeTrackingByHysteresis(doubleThresholdedImage, lowThreshold, highThreshold);
-            // Step 6 - postprocessing (optional)
             // Display
             mainPicture.Image = finalEdgeImage;
         }
@@ -914,9 +917,10 @@ namespace EdgeDetection
 
         private void button29_Click_1(object sender, EventArgs e)
         {
-            float qualityLevel = trackBar4.Value/ 100;
+            qualityLevel = (float)(trackBar4.Value * 0.01);
+            minimumDistance = (float)(trackBar1.Value);
             Bitmap copy = extraFunctions.DeepCopyBitmap(originalImage);
-            Bitmap res = preprocessing.DetectHarrisCorners(copy, qualityLevel);
+            Bitmap res = preprocessing.DetectHarrisCorners(copy, qualityLevel, minimumDistance);
             mainPicture.Image = res;
         }
 
@@ -960,13 +964,17 @@ namespace EdgeDetection
             //`harrisQualityLevel` (typically a value between 0.01 and 0.15) 
         }
 
+        private float qualityLevel = 0.04f;
+        private float minimumDistance = 15;
+        
         private void trackBar4_Scroll(object sender, EventArgs e)
         {
 
-            float qualityLevel = (float)(trackBar4.Value * 0.01);
-            label68.Text = qualityLevel.ToString();
+            qualityLevel = (float)(trackBar4.Value * 0.01);
+            minimumDistance = (float)(trackBar1.Value);
+            label68.Text = qualityLevel.ToString(  );
             Bitmap copy = extraFunctions.DeepCopyBitmap(originalImage);
-            Bitmap res = preprocessing.DetectHarrisCorners(copy, qualityLevel);
+            Bitmap res = preprocessing.DetectHarrisCorners(copy, qualityLevel, minimumDistance);
             mainPicture.Image = res;
 
         }
@@ -979,6 +987,20 @@ namespace EdgeDetection
         private void button30_Click_1(object sender, EventArgs e)
         {
             captureResult();
+        }
+
+        private void label73_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll_4(object sender, EventArgs e)
+        {
+            minimumDistance = (float)(trackBar1.Value);
+            label74.Text = minimumDistance.ToString();
+            Bitmap copy = extraFunctions.DeepCopyBitmap(originalImage);
+            Bitmap res = preprocessing.DetectHarrisCorners(copy, qualityLevel, minimumDistance);
+            mainPicture.Image = res;
         }
     }
 }

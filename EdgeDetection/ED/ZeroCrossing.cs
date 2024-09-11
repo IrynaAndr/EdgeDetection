@@ -74,6 +74,59 @@ namespace EdgeDetection.ED
             return false;
         }
 
+        /*
+        public static Bitmap DetectZeroCrossings(Bitmap laplacianImage, double threshold)
+        {
+            int width = laplacianImage.Width;
+            int height = laplacianImage.Height;
+            Bitmap edgeImage = new Bitmap(width, height);
+
+            for (int y = 1; y < height - 1; y++)
+            {
+                for (int x = 1; x < width - 1; x++)
+                {
+                    // Get Laplacian value at (x, y) and its neighbors
+                    double currentPixel = GetGrayscaleValue(laplacianImage.GetPixel(x, y));
+
+                    // Check surrounding pixels for zero-crossings
+                    bool zeroCrossing = false;
+                    for (int dy = -1; dy <= 1; dy++)
+                    {
+                        for (int dx = -1; dx <= 1; dx++)
+                        {
+                            if (dx != 0 || dy != 0)
+                            {
+                                double neighborPixel = GetGrayscaleValue(laplacianImage.GetPixel(x + dx, y + dy));
+                                if ((currentPixel > 0 && neighborPixel < 0) || (currentPixel < 0 && neighborPixel > 0))
+                                {
+                                    zeroCrossing = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (zeroCrossing) break;
+                    }
+
+                    if (zeroCrossing && Math.Abs(currentPixel) > threshold)
+                    {
+                        edgeImage.SetPixel(x, y, Color.White);
+                    }
+                    else
+                    {
+                        edgeImage.SetPixel(x, y, Color.Black);
+                    }
+                }
+            }
+
+            return edgeImage;
+        }
+
+        private static double GetGrayscaleValue(Color color)
+        {
+            return (color.R + color.G + color.B) / 3.0; 
+        }
+        */
+
 
     }
 }

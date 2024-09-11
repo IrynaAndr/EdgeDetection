@@ -178,24 +178,24 @@ namespace EdgeDetection.ED
                                                                  ImageLockMode.WriteOnly, PixelFormat.Format24bppRgb);
 
             int bytes = thresholdedData.Stride * height;
-            byte[] thresholdedBuffer = new byte[bytes];
+            byte[] inputImageBuffer = new byte[bytes];
             byte[] hysteresisBuffer = new byte[bytes];
 
-            Marshal.Copy(thresholdedData.Scan0, thresholdedBuffer, 0, bytes);
+            Marshal.Copy(thresholdedData.Scan0, inputImageBuffer, 0, bytes);
 
             for (int y = 1; y < height - 1; y++)
             {
                 for (int x = 1; x < width - 1; x++)
                 {
                     int byteOffset = y * thresholdedData.Stride + x * 3;
-                    byte pixelValue = thresholdedBuffer[byteOffset];
+                    byte pixelValue = inputImageBuffer[byteOffset];
 
                     if (pixelValue >= highThreshold)
                     {
                         hysteresisBuffer[byteOffset] = 255;
                         hysteresisBuffer[byteOffset + 1] = 255;
                         hysteresisBuffer[byteOffset + 2] = 255;
-                        TrackEdges(thresholdedBuffer, hysteresisBuffer, thresholdedData.Stride, x, y, width, height, lowThreshold);
+                        TrackEdges(inputImageBuffer, hysteresisBuffer, thresholdedData.Stride, x, y, width, height, lowThreshold);
                     }
                     else if (pixelValue < lowThreshold)
                     {
@@ -251,3 +251,4 @@ namespace EdgeDetection.ED
 
     }
 }
+
