@@ -198,7 +198,6 @@ namespace EdgeDetection
 
             } while (pixelsRemoved);
 
-            // Convert the binary array back to a bitmap
             return ConvertToBitmap(binaryImage, sourceBitmap.Width, sourceBitmap.Height);
         }
 

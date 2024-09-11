@@ -211,6 +211,11 @@
             this.button27 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label68 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label67 = new System.Windows.Forms.Label();
@@ -229,11 +234,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mainPicture = new System.Windows.Forms.PictureBox();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_value)).BeginInit();
@@ -277,6 +277,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEyeShrink)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -284,7 +285,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -700,7 +700,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(517, 333);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "--old--";
+            this.tabPage3.Text = "----";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // histogramPictureBox
@@ -2207,6 +2207,56 @@
             this.tabPage15.Text = "Thinning";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(21, 254);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(117, 16);
+            this.label75.TabIndex = 25;
+            this.label75.Text = "Minimum distance:";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(148, 312);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(21, 16);
+            this.label74.TabIndex = 24;
+            this.label74.Text = "15";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(274, 289);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(21, 16);
+            this.label72.TabIndex = 23;
+            this.label72.Text = "50";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(43, 289);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(14, 16);
+            this.label73.TabIndex = 22;
+            this.label73.Text = "1";
+            this.label73.Click += new System.EventHandler(this.label73_Click);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(70, 272);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar1.Maximum = 50;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(198, 56);
+            this.trackBar1.SmallChange = 3;
+            this.trackBar1.TabIndex = 21;
+            this.trackBar1.Value = 15;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_4);
+            // 
             // label68
             // 
             this.label68.AutoSize = true;
@@ -2395,56 +2445,6 @@
             this.mainPicture.TabStop = false;
             this.mainPicture.Click += new System.EventHandler(this.mainPicture_Click);
             // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(274, 289);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(21, 16);
-            this.label72.TabIndex = 23;
-            this.label72.Text = "50";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(43, 289);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(14, 16);
-            this.label73.TabIndex = 22;
-            this.label73.Text = "1";
-            this.label73.Click += new System.EventHandler(this.label73_Click);
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(70, 272);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.trackBar1.Maximum = 50;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(198, 56);
-            this.trackBar1.SmallChange = 3;
-            this.trackBar1.TabIndex = 21;
-            this.trackBar1.Value = 15;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_4);
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(148, 312);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(21, 16);
-            this.label74.TabIndex = 24;
-            this.label74.Text = "15";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(21, 254);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(117, 16);
-            this.label75.TabIndex = 25;
-            this.label75.Text = "Minimum distance:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2463,7 +2463,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Image processing app";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -2524,6 +2524,7 @@
             this.panel2.PerformLayout();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -2531,7 +2532,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
